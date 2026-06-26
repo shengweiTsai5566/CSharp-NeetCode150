@@ -3,6 +3,39 @@
 > 一個 .NET C# LeetCode 刷題練習環境，搭配 VS Code Copilot Skill 自動化管理。
 > 專為**軟體工程師面試**設計，題目涵蓋製程控制、硬體抽象化、通訊協定等實務場景。
 
+> ✅ **NeetCode 150 完整收錄** — 全數 149+ 題目已加入專案，每題皆含 `ANSWER.md` 解題思路 + C# 實作 + xUnit 測試。
+
+---
+
+## 🎯 這個專案對刷題有什麼幫助？
+
+### ✅ 省去繁瑣設定，專注解題本身
+- **使用leetcode-helper scaffold新增題目**：輸入 `lc: scaffold TwoSum` 自動建立題目檔案 + 測試 + ANSWER.md，不用手動新增專案、測試專案、namespace
+- **leetcode-helper測試解答**：`dotnet test --filter TwoSum` 直接驗證該題解答，不用開 IDE 慢慢找測試位置
+- **集中管理**：149+ 題目統一放在 `Problems/` 下，結構一致，不用在檔案系統裡翻來翻去
+
+### ✅ 每題附完整解題筆記，學得深、記得牢
+- 每題都有 **`ANSWER.md`**，包含：思路推導、時間/空間複雜度分析、多種解法比較、C# 完整實作
+- 解題思路直接用中文或英文寫在題目旁邊，複習時一目瞭然
+- 支援 `lc: list` 快速瀏覽所有題目
+
+### ✅ 系統化分類，按主題循序漸進
+- 完整 **NeetCode 150** 題庫，按 Array、Stack、Tree、Graph、DP 等主題分類
+- 自訂面試相關題目（WaferScanOptimizer、CommandParser 等），貼近面試場景
+
+### ✅ 真實 C# 專案結構，面試無縫接軌
+- 使用最新 **.NET 9.0**、**xUnit**、**file-scoped namespace**，與業界實務開發一致
+- 共用資料型別（`ListNode`、`TreeNode`、`Node`）集中管理，減少重複程式碼
+- `dotnet build` 0 錯誤，隨時保持可編譯狀態
+
+### ✅ AI 輔助學習，事半功倍
+- **Copilot Skill 自動化**：用 `lc: scaffold` 一鍵開新題、`lc: list` 瀏覽進度、`lc: remove` 清理，瑣事交給 AI
+- **Copilot Chat 即時答疑**：卡關時直接問「Explain this solution」、「What's the time complexity?」、「How to optimize?」，不用跳出編輯器
+- **AI 生成面試準備清單**：貼上 JD 職缺描述，讓 Copilot 幫你對應到專案中的題目，自動產出 `Interview-Prep-List.md`
+- **解答比對與優化**：寫完後可請 Copilot Review 程式碼，檢查邊界條件、建議更優解法或說明複雜度
+
+> 💡 **學習建議**：先嘗試自己寫一遍 → 遇到卡關再看 `ANSWER.md` 提示 → 寫完後跑測試確認 → 隔天複習時只看思路重新實作。這個專案就是圍繞這個流程設計的。
+
 ---
 
 ## ✨ 專案特色
