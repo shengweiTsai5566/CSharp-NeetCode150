@@ -1,0 +1,14 @@
+bin/
+obj/
+.vs/
+.vscode/
+*.user
+*.suo
+*.cache
+*.pdb
+**/bin/
+**/obj/
+**/.vscode/
+
+# 個人面試準備清單（含個人職缺資訊）
+Interview-Prep-List.md
