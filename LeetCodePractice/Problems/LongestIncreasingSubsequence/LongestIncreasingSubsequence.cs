@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Longest Increasing Subsequence
 /// 對應 LeetCode：LC 300
@@ -43,5 +45,6 @@ public class LongestIncreasingSubsequence
         throw new NotImplementedException();
     }
 }
+
 
 

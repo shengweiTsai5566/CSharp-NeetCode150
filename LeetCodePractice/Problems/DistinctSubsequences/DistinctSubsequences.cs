@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Distinct Subsequences
 /// 對應 LeetCode：LC 115
@@ -47,5 +49,6 @@ public class DistinctSubsequences
         throw new NotImplementedException();
     }
 }
+
 
 

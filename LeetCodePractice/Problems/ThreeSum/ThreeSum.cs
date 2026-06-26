@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// 3Sum
 /// 對應 LeetCode：LC 15
@@ -48,5 +50,6 @@ public class ThreeSum
         throw new NotImplementedException();
     }
 }
+
 
 

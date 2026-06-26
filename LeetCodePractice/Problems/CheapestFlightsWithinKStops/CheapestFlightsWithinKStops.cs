@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Cheapest Flights Within K Stops
 /// 對應 LeetCode：LC 787
@@ -64,5 +66,6 @@ public class CheapestFlightsWithinKStops
         throw new NotImplementedException();
     }
 }
+
 
 

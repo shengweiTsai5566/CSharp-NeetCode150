@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Course Schedule II
 /// 對應 LeetCode：LC 210
@@ -53,5 +55,6 @@ public class CourseScheduleII
         throw new NotImplementedException();
     }
 }
+
 
 

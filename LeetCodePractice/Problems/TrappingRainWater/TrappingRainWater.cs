@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Trapping Rain Water
 /// 對應 LeetCode：LC 42
@@ -36,5 +38,6 @@ public class TrappingRainWater
         throw new NotImplementedException();
     }
 }
+
 
 

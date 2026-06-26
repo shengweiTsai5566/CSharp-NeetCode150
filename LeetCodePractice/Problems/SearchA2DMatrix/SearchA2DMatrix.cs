@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Search a 2D Matrix
 /// 對應 LeetCode：LC 74
@@ -45,5 +47,6 @@ public class SearchA2DMatrix
         throw new NotImplementedException();
     }
 }
+
 
 

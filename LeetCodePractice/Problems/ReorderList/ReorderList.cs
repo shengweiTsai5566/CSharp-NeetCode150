@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Reorder List
 /// 對應 LeetCode：LC 143
@@ -41,6 +43,7 @@ public class ReorderList
         throw new NotImplementedException();
     }
 }
+
 
 
 

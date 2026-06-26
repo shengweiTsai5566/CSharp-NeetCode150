@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Maximum Depth of Binary Tree
 /// 對應 LeetCode：LC 104
@@ -35,6 +37,7 @@ public class MaximumDepthOfBinaryTree
         throw new NotImplementedException();
     }
 }
+
 
 
 

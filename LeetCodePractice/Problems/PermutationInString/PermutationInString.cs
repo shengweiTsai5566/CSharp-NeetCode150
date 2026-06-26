@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Permutation in String
 /// 對應 LeetCode：LC 567
@@ -36,5 +38,6 @@ public class PermutationInString
         throw new NotImplementedException();
     }
 }
+
 
 

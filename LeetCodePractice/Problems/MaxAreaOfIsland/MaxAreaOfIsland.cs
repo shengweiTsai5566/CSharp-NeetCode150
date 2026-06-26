@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Max Area of Island
 /// 對應 LeetCode：LC 695
@@ -42,5 +44,6 @@ public class MaxAreaOfIsland
         throw new NotImplementedException();
     }
 }
+
 
 

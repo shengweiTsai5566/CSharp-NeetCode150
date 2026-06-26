@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Same Tree
 /// 對應 LeetCode：LC 100
@@ -40,6 +42,7 @@ public class SameTree
         throw new NotImplementedException();
     }
 }
+
 
 
 

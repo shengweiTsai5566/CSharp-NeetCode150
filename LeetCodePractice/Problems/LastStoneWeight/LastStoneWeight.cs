@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Last Stone Weight
 /// 對應 LeetCode：LC 1046
@@ -48,5 +50,6 @@ public class LastStoneWeight
         throw new NotImplementedException();
     }
 }
+
 
 

@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Pow(x, n)
 /// 對應 LeetCode：LC 50
@@ -45,5 +47,6 @@ public class PowXN
         throw new NotImplementedException();
     }
 }
+
 
 

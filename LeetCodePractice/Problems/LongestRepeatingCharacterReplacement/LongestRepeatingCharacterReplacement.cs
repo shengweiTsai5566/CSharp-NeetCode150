@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Longest Repeating Character Replacement
 /// 對應 LeetCode：LC 424
@@ -41,5 +43,6 @@ public class LongestRepeatingCharacterReplacement
         throw new NotImplementedException();
     }
 }
+
 
 

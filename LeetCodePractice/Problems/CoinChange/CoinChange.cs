@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Coin Change
 /// 對應 LeetCode：LC 322
@@ -45,5 +47,6 @@ public class CoinChange
         throw new NotImplementedException();
     }
 }
+
 
 

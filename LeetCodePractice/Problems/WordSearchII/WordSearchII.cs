@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Word Search II
 /// 對應 LeetCode：LC 212
@@ -47,5 +49,6 @@ public class WordSearchII
         throw new NotImplementedException();
     }
 }
+
 
 

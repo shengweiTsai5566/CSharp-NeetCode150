@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Letter Combinations of a Phone Number
 /// 對應 LeetCode：LC 17
@@ -35,5 +37,6 @@ public class LetterCombinationsOfAPhoneNumber
         throw new NotImplementedException();
     }
 }
+
 
 

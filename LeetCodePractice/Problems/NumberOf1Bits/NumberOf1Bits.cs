@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Number of 1 Bits
 /// 對應 LeetCode：LC 191
@@ -55,5 +57,6 @@ public class NumberOf1Bits
         throw new NotImplementedException();
     }
 }
+
 
 

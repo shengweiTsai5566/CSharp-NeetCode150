@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Reconstruct Itinerary
 /// 對應 LeetCode：LC 332
@@ -48,5 +50,6 @@ public class ReconstructItinerary
         throw new NotImplementedException();
     }
 }
+
 
 

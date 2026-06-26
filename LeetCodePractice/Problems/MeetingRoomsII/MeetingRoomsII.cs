@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Meeting Rooms II
 /// 對應 LeetCode：LC 253
@@ -13,5 +15,6 @@ public class MeetingRoomsII
         throw new NotImplementedException();
     }
 }
+
 
 

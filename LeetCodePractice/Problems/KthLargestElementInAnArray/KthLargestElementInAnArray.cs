@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Kth Largest Element in an Array
 /// 對應 LeetCode：LC 215
@@ -37,5 +39,6 @@ public class KthLargestElementInAnArray
         throw new NotImplementedException();
     }
 }
+
 
 

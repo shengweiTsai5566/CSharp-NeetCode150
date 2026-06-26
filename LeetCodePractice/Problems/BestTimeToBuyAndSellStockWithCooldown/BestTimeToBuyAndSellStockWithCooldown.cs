@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Best Time to Buy and Sell Stock with Cooldown
 /// 對應 LeetCode：LC 309
@@ -40,5 +42,6 @@ public class BestTimeToBuyAndSellStockWithCooldown
         throw new NotImplementedException();
     }
 }
+
 
 

@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Set Matrix Zeroes
 /// 對應 LeetCode：LC 73
@@ -49,5 +51,6 @@ public class SetMatrixZeroes
         throw new NotImplementedException();
     }
 }
+
 
 

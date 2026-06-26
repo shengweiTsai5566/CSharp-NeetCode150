@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Rotate Image
 /// 對應 LeetCode：LC 48
@@ -37,5 +39,6 @@ public class RotateImage
         throw new NotImplementedException();
     }
 }
+
 
 

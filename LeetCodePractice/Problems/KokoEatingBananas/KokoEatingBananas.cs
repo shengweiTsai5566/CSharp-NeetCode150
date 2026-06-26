@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Koko Eating Bananas
 /// 對應 LeetCode：LC 875
@@ -46,5 +48,6 @@ public class KokoEatingBananas
         throw new NotImplementedException();
     }
 }
+
 
 

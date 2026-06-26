@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Happy Number
 /// 對應 LeetCode：LC 202
@@ -46,5 +48,6 @@ public class HappyNumber
         throw new NotImplementedException();
     }
 }
+
 
 

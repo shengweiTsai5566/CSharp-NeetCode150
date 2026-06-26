@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Word Break
 /// 對應 LeetCode：LC 139
@@ -49,5 +51,6 @@ public class WordBreak
         throw new NotImplementedException();
     }
 }
+
 
 

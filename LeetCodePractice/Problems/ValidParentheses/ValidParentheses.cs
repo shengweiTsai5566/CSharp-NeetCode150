@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Valid Parentheses
 /// 對應 LeetCode：LC 20
@@ -61,5 +63,6 @@ public class ValidParentheses
         throw new NotImplementedException();
     }
 }
+
 
 

@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Permutations
 /// 對應 LeetCode：LC 46
@@ -40,5 +42,6 @@ public class Permutations
         throw new NotImplementedException();
     }
 }
+
 
 

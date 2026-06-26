@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Largest Rectangle in Histogram
 /// 對應 LeetCode：LC 84
@@ -35,5 +37,6 @@ public class LargestRectangleInHistogram
         throw new NotImplementedException();
     }
 }
+
 
 

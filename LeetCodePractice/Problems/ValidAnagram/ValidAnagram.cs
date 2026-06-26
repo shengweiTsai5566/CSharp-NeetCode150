@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Valid Anagram
 /// 對應 LeetCode：LC 242
@@ -39,5 +41,6 @@ public class ValidAnagram
         throw new NotImplementedException();
     }
 }
+
 
 

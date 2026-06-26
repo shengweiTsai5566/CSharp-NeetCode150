@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Minimum Window Substring
 /// 對應 LeetCode：LC 76
@@ -52,5 +54,6 @@ public class MinimumWindowSubstring
         throw new NotImplementedException();
     }
 }
+
 
 

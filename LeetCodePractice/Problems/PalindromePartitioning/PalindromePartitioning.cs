@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Palindrome Partitioning
 /// 對應 LeetCode：LC 131
@@ -33,5 +35,6 @@ public class PalindromePartitioning
         throw new NotImplementedException();
     }
 }
+
 
 

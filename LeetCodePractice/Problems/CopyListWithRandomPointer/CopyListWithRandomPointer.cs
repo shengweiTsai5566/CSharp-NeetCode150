@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Copy List with Random Pointer
 /// 對應 LeetCode：LC 138
@@ -54,6 +56,7 @@ public class CopyListWithRandomPointer
         throw new NotImplementedException();
     }
 }
+
 
 
 

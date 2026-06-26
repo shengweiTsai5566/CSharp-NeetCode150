@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Count Good Nodes in Binary Tree
 /// 對應 LeetCode：LC 1448
@@ -77,6 +79,7 @@ public class CountGoodNodesInBinaryTree
         throw new NotImplementedException();
     }
 }
+
 
 
 

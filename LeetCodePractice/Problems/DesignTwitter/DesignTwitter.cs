@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Design Twitter
 /// 對應 LeetCode：LC 355
@@ -75,5 +77,6 @@ public class DesignTwitter
         throw new NotImplementedException();
     }
 }
+
 
 

@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Subsets
 /// 對應 LeetCode：LC 78
@@ -37,5 +39,6 @@ public class Subsets
         throw new NotImplementedException();
     }
 }
+
 
 

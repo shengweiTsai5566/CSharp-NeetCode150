@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Find Minimum in Rotated Sorted Array
 /// 對應 LeetCode：LC 153
@@ -57,5 +59,6 @@ public class FindMinimumInRotatedSortedArray
         throw new NotImplementedException();
     }
 }
+
 
 

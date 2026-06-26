@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Serialize and Deserialize Binary Tree
 /// 對應 LeetCode：LC 297
@@ -43,6 +45,7 @@ public class SerializeAndDeserializeBinaryTree
         throw new NotImplementedException();
     }
 }
+
 
 
 

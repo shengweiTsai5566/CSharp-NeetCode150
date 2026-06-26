@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Reverse Bits
 /// 對應 LeetCode：LC 190
@@ -73,5 +75,6 @@ public class ReverseBits
         throw new NotImplementedException();
     }
 }
+
 
 

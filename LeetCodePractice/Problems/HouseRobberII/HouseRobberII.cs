@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// House Robber II
 /// 對應 LeetCode：LC 213
@@ -43,5 +45,6 @@ public class HouseRobberII
         throw new NotImplementedException();
     }
 }
+
 
 

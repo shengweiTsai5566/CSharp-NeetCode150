@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Invert Binary Tree
 /// 對應 LeetCode：LC 226
@@ -38,6 +40,7 @@ public class InvertBinaryTree
         throw new NotImplementedException();
     }
 }
+
 
 
 

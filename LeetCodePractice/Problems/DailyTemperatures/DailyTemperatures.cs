@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Daily Temperatures
 /// 對應 LeetCode：LC 739
@@ -38,5 +40,6 @@ public class DailyTemperatures
         throw new NotImplementedException();
     }
 }
+
 
 

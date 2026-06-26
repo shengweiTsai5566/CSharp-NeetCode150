@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Implement Trie (Prefix Tree)
 /// 對應 LeetCode：LC 208
@@ -63,5 +65,6 @@ public class ImplementTrie
         throw new NotImplementedException();
     }
 }
+
 
 

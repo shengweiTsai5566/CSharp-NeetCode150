@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// N-Queens
 /// 對應 LeetCode：LC 51
@@ -36,5 +38,6 @@ public class NQueens
         throw new NotImplementedException();
     }
 }
+
 
 

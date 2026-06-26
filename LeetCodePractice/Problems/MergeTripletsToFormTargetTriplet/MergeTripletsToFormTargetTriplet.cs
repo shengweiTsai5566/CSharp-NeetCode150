@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Merge Triplets to Form Target Triplet
 /// 對應 LeetCode：LC 1899
@@ -62,5 +64,6 @@ public class MergeTripletsToFormTargetTriplet
         throw new NotImplementedException();
     }
 }
+
 
 

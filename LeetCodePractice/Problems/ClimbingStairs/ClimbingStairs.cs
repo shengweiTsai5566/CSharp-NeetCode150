@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Climbing Stairs
 /// 對應 LeetCode：LC 70
@@ -40,5 +42,6 @@ public class ClimbingStairs
         throw new NotImplementedException();
     }
 }
+
 
 

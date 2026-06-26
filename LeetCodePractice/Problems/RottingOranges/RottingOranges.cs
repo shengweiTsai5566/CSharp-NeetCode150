@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Rotting Oranges
 /// 對應 LeetCode：LC 994
@@ -54,5 +56,6 @@ public class RottingOranges
         throw new NotImplementedException();
     }
 }
+
 
 

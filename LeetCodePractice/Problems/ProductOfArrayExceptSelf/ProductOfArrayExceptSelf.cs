@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Product of Array Except Self
 /// 對應 LeetCode：LC 238
@@ -43,5 +45,6 @@ public class ProductOfArrayExceptSelf
         throw new NotImplementedException();
     }
 }
+
 
 

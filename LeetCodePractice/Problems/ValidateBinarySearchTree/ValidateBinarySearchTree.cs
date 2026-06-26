@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Validate Binary Search Tree
 /// 對應 LeetCode：LC 98
@@ -42,6 +44,7 @@ public class ValidateBinarySearchTree
         throw new NotImplementedException();
     }
 }
+
 
 
 

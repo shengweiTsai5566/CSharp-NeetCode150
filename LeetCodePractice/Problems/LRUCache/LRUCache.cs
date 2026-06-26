@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// LRU Cache
 /// 對應 LeetCode：LC 146
@@ -63,5 +65,6 @@ public class LRUCache
         throw new NotImplementedException();
     }
 }
+
 
 

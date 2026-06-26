@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Subtree of Another Tree
 /// 對應 LeetCode：LC 572
@@ -39,6 +41,7 @@ public class SubtreeOfAnotherTree
         throw new NotImplementedException();
     }
 }
+
 
 
 

@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Jump Game
 /// 對應 LeetCode：LC 55
@@ -37,5 +39,6 @@ public class JumpGame
         throw new NotImplementedException();
     }
 }
+
 
 

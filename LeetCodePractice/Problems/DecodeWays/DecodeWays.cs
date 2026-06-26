@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Decode Ways
 /// 對應 LeetCode：LC 91
@@ -79,5 +81,6 @@ public class DecodeWays
         throw new NotImplementedException();
     }
 }
+
 
 

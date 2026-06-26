@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Non-overlapping Intervals
 /// 對應 LeetCode：LC 435
@@ -45,5 +47,6 @@ public class NonOverlappingIntervals
         throw new NotImplementedException();
     }
 }
+
 
 

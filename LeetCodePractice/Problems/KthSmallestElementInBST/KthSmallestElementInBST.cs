@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Kth Smallest Element in a BST
 /// 對應 LeetCode：LC 230
@@ -39,6 +41,7 @@ public class KthSmallestElementInBST
         throw new NotImplementedException();
     }
 }
+
 
 
 

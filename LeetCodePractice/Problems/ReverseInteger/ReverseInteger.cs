@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Reverse Integer
 /// 對應 LeetCode：LC 7
@@ -38,5 +40,6 @@ public class ReverseInteger
         throw new NotImplementedException();
     }
 }
+
 
 

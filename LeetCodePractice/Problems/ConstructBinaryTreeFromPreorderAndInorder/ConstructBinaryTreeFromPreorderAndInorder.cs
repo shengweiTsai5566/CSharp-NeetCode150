@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Construct Binary Tree from Preorder and Inorder Traversal
 /// 對應 LeetCode：LC 105
@@ -43,6 +45,7 @@ public class ConstructBinaryTreeFromPreorderAndInorder
         throw new NotImplementedException();
     }
 }
+
 
 
 

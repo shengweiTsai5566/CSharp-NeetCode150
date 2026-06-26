@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Detect Squares
 /// 對應 LeetCode：LC 2013
@@ -66,5 +68,6 @@ public class DetectSquares
         throw new NotImplementedException();
     }
 }
+
 
 

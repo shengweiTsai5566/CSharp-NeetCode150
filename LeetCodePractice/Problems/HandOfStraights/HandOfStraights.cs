@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Hand of Straights
 /// 對應 LeetCode：LC 846
@@ -43,5 +45,6 @@ public class HandOfStraights
         throw new NotImplementedException();
     }
 }
+
 
 

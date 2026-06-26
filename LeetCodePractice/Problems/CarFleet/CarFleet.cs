@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Car Fleet
 /// 對應 LeetCode：LC 853
@@ -77,5 +79,6 @@ public class CarFleet
         throw new NotImplementedException();
     }
 }
+
 
 

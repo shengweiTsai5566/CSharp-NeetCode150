@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Kth Largest Element in a Stream
 /// 對應 LeetCode：LC 703
@@ -83,5 +85,6 @@ public class KthLargestElementInAStream
         throw new NotImplementedException();
     }
 }
+
 
 

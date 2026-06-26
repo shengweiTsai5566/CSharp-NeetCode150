@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Encode and Decode Strings
 /// 對應 LeetCode：LC 271
@@ -19,5 +21,6 @@ public class EncodeAndDecodeStrings
         throw new NotImplementedException();
     }
 }
+
 
 

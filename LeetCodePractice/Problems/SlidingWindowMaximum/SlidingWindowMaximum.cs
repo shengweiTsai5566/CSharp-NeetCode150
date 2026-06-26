@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Sliding Window Maximum
 /// 對應 LeetCode：LC 239
@@ -46,5 +48,6 @@ public class SlidingWindowMaximum
         throw new NotImplementedException();
     }
 }
+
 
 

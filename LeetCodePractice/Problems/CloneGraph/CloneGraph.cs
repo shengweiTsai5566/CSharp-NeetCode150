@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Clone Graph
 /// 對應 LeetCode：LC 133
@@ -70,6 +72,7 @@ public class CloneGraph
         throw new NotImplementedException();
     }
 }
+
 
 
 

@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Multiply Strings
 /// 對應 LeetCode：LC 43
@@ -37,5 +39,6 @@ public class MultiplyStrings
         throw new NotImplementedException();
     }
 }
+
 
 

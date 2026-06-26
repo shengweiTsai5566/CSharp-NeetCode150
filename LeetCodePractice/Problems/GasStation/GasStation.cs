@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Gas Station
 /// 對應 LeetCode：LC 134
@@ -56,5 +58,6 @@ public class GasStation
         throw new NotImplementedException();
     }
 }
+
 
 

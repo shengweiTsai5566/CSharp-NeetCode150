@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Container With Most Water
 /// 對應 LeetCode：LC 11
@@ -42,5 +44,6 @@ public class ContainerWithMostWater
         throw new NotImplementedException();
     }
 }
+
 
 

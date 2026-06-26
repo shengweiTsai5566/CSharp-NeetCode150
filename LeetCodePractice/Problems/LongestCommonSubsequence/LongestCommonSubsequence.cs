@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Longest Common Subsequence
 /// 對應 LeetCode：LC 1143
@@ -47,5 +49,6 @@ public class LongestCommonSubsequence
         throw new NotImplementedException();
     }
 }
+
 
 

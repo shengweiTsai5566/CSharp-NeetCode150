@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Single Number
 /// 對應 LeetCode：LC 136
@@ -45,5 +47,6 @@ public class SingleNumber
         throw new NotImplementedException();
     }
 }
+
 
 

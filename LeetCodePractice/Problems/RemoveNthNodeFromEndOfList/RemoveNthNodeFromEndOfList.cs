@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Remove Nth Node From End of List
 /// 對應 LeetCode：LC 19
@@ -46,6 +48,7 @@ public class RemoveNthNodeFromEndOfList
         throw new NotImplementedException();
     }
 }
+
 
 
 

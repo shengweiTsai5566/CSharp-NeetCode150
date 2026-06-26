@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Counting Bits
 /// 對應 LeetCode：LC 338
@@ -50,5 +52,6 @@ public class CountingBits
         throw new NotImplementedException();
     }
 }
+
 
 

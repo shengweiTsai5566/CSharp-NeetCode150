@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Binary Search
 /// 對應 LeetCode：LC 704
@@ -41,5 +43,6 @@ public class BinarySearch
         throw new NotImplementedException();
     }
 }
+
 
 

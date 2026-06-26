@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Interleaving String
 /// 對應 LeetCode：LC 97
@@ -61,5 +63,6 @@ public class InterleavingString
         throw new NotImplementedException();
     }
 }
+
 
 

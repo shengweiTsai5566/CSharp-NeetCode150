@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Diameter of Binary Tree
 /// 對應 LeetCode：LC 543
@@ -38,6 +40,7 @@ public class DiameterOfBinaryTree
         throw new NotImplementedException();
     }
 }
+
 
 
 

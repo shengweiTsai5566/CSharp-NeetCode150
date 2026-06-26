@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Median of Two Sorted Arrays
 /// 對應 LeetCode：LC 4
@@ -45,5 +47,6 @@ public class MedianOfTwoSortedArrays
         throw new NotImplementedException();
     }
 }
+
 
 

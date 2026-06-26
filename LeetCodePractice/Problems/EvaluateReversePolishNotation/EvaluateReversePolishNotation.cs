@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Evaluate Reverse Polish Notation
 /// 對應 LeetCode：LC 150
@@ -63,5 +65,6 @@ public class EvaluateReversePolishNotation
         throw new NotImplementedException();
     }
 }
+
 
 

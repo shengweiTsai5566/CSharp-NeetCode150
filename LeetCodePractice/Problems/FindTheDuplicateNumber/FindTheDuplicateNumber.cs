@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Find the Duplicate Number
 /// 對應 LeetCode：LC 287
@@ -54,5 +56,6 @@ public class FindTheDuplicateNumber
         throw new NotImplementedException();
     }
 }
+
 
 

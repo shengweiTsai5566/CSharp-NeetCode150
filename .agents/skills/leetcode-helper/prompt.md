@@ -28,13 +28,13 @@ When recognized, immediately:
 2. **Ask for source**: Ask the user: "請選擇題目來源：`LeetCode`（原題）、`LeetCode Variant`（延伸變形）、`NeetCode 150`（精選列表）或 `Custom`（自訂題目）"
    - 此欄位為必填，由使用者選擇。
 
-3. **Create Problem File**: `LeetCodePractice/Problems/<ProblemName>.cs`
+3. **Create Problem Folder and File**: `LeetCodePractice/Problems/<ProblemName>/<ProblemName>.cs`
    - Use the pattern from `ProblemTemplate.cs`
    - Replace class name with user's ProblemName
    - Add TODO comments for problem description and implementation
    - Do NOT implement the solution
 
-4. **Create Test File**: `LeetCodePractice.Tests/<ProblemName>Tests.cs`
+4. **Create Test Folder and File**: `LeetCodePractice.Tests/<ProblemName>/<ProblemName>Tests.cs`
    - Use the pattern from `ProblemTemplateTests.cs`
    - Add at least one example test case
    - Include placeholder comments to update expected values
@@ -42,7 +42,7 @@ When recognized, immediately:
 
 5. **Update problem list**: Add the new problem (with category and source) to `.agents/skills/leetcode-helper/resources/problem-list.md`
 
-6. **Confirm**: Show the user both file paths created and remind them to:
+6. **Confirm**: Show the user the created folder paths and remind them to:
    - Add problem description as comments
    - Add test cases with expected values
    - Implement their solution
@@ -53,8 +53,8 @@ When recognized, immediately:
 **Action**:
 - Ask category → user says "Array / Interval"
 - Ask source → user says "LeetCode"
-- Create `LeetCodePractice/Problems/MergeIntervals.cs` based on template
-- Create `LeetCodePractice.Tests/MergeIntervalsTests.cs` based on template
+- Create `LeetCodePractice/Problems/MergeIntervals/MergeIntervals.cs` based on template
+- Create `LeetCodePractice.Tests/MergeIntervals/MergeIntervalsTests.cs` based on template
 - Update `.agents/skills/leetcode-helper/resources/problem-list.md` with category "Array / Interval" and source "LeetCode"
 - Output: "✓ Created MergeIntervals problem scaffold [Array / Interval][LeetCode]"
 
@@ -72,11 +72,11 @@ When recognized, immediately:
 ### Action
 When recognized, immediately:
 
-1. **Confirm**: Ask the user to confirm they want to delete both files:
-   - `LeetCodePractice/Problems/<ProblemName>.cs`
-   - `LeetCodePractice.Tests/<ProblemName>Tests.cs`
+1. **Confirm**: Ask the user to confirm they want to delete both folders:
+   - `LeetCodePractice/Problems/<ProblemName>/`
+   - `LeetCodePractice.Tests/<ProblemName>/`
 
-2. **Delete Files**: After confirmation, delete both files.
+2. **Delete Folders**: After confirmation, recursively delete both folders.
 
 3. **Update problem list**: Remove the problem from `.agents/skills/leetcode-helper/resources/problem-list.md`
 
@@ -87,11 +87,11 @@ When recognized, immediately:
 
 **Action**:
 - Confirm with user
-- Delete `LeetCodePractice/Problems/WaferScanOptimizer.cs`
-- Delete `LeetCodePractice.Tests/WaferScanOptimizerTests.cs`
+- Delete `LeetCodePractice/Problems/WaferScanOptimizer/`
+- Delete `LeetCodePractice.Tests/WaferScanOptimizer/`
 - Update `.agents/skills/leetcode-helper/resources/problem-list.md`
 - Run `dotnet test`
-- Output: "✓ Removed WaferScanOptimizer and its test file. dotnet test passed."
+- Output: "✓ Removed WaferScanOptimizer and its test folder. dotnet test passed."
 
 ---
 
@@ -105,11 +105,11 @@ When recognized, immediately:
 ### Action
 When recognized, immediately:
 
-1. **Rename Files**:
-   - Rename `LeetCodePractice/Problems/<OldName>.cs` → `LeetCodePractice/Problems/<NewName>.cs`
-   - Rename `LeetCodePractice.Tests/<OldName>Tests.cs` → `LeetCodePractice.Tests/<NewName>Tests.cs`
+1. **Rename Folders**:
+   - Rename `LeetCodePractice/Problems/<OldName>/` → `LeetCodePractice/Problems/<NewName>/`
+   - Rename `LeetCodePractice.Tests/<OldName>/` → `LeetCodePractice.Tests/<NewName>/`
 
-2. **Update Class Names**: Read both renamed files and update the class declaration from `<OldName>` to `<NewName>`.
+2. **Update Class Names**: Read both `.cs` files and update the class declaration from `<OldName>` to `<NewName>`.
 
 3. **Update problem list**: Update the entry in `.agents/skills/leetcode-helper/resources/problem-list.md`
 
@@ -119,8 +119,9 @@ When recognized, immediately:
 **User**: `lc: rename TwoSum to TwoSumV2`
 
 **Action**:
-- Rename files
-- Update class name inside both files
+- Rename `LeetCodePractice/Problems/TwoSum/` → `LeetCodePractice/Problems/TwoSumV2/`
+- Rename `LeetCodePractice.Tests/TwoSum/` → `LeetCodePractice.Tests/TwoSumV2/`
+- Update class name inside both `.cs` files
 - Update `.agents/skills/leetcode-helper/resources/problem-list.md`
 - Run `dotnet test`
 - Output: "✓ Renamed TwoSum to TwoSumV2. dotnet test passed."
@@ -141,9 +142,9 @@ When recognized, immediately:
 
 1. **Read problem list**: Read `.agents/skills/leetcode-helper/resources/problem-list.md` for the canonical list.
 
-2. **Scan**: List all `.cs` files in `LeetCodePractice/Problems/`, excluding `ProblemTemplate.cs`, and cross-check with the problem list.
+2. **Scan**: Scan all subdirectories in `LeetCodePractice/Problems/`, each subdirectory is one problem. Exclude shared type folders (none, since they are files like `ListNode.cs` at root level). Cross-check with the problem list.
 
-3. **Check Test Status**: For each problem, check if a corresponding `<ProblemName>Tests.cs` file exists in `LeetCodePractice.Tests/`.
+3. **Check Test Status**: For each problem, check if a `LeetCodePractice.Tests/<ProblemName>/<ProblemName>Tests.cs` file exists.
 
 4. **Read descriptions and source**: For each problem file, read the XML doc comment (`/// <summary>`) to extract:
    - Problem title (first line of summary)
@@ -168,8 +169,8 @@ When recognized, immediately:
    #### ProblemName
    **[Source] LC xxx Original**
    Brief description...
-   - [Implementation](LeetCodePractice/Problems/ProblemName.cs)
-   - [Tests](LeetCodePractice.Tests/ProblemNameTests.cs)
+   - [Implementation](LeetCodePractice/Problems/ProblemName/ProblemName.cs)
+   - [Tests](LeetCodePractice.Tests/ProblemName/ProblemNameTests.cs)
    ```
 
 6. **Display**: Show a summary table and file path in chat.

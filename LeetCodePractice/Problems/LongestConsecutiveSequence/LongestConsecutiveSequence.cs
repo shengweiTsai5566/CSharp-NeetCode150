@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Longest Consecutive Sequence
 /// 對應 LeetCode：LC 128
@@ -41,5 +43,6 @@ public class LongestConsecutiveSequence
         throw new NotImplementedException();
     }
 }
+
 
 

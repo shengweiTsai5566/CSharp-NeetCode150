@@ -36,7 +36,7 @@ public class CommandDispatcherTests
     // ===== 多執行緒並發 (Concurrency) =====
 
     [Fact]
-    public void EnqueueCommand_ConcurrentProducers_NoDataCorruption()
+    public async Task EnqueueCommand_ConcurrentProducers_NoDataCorruption()
     {
         using var dispatcher = new CommandDispatcher();
         int producerCount = 5;
@@ -58,8 +58,8 @@ public class CommandDispatcherTests
             });
         }
 
-        Task.WaitAll(tasks);
-        Thread.Sleep(2000);
+        await Task.WhenAll(tasks);
+        await Task.Delay(2000);
     }
 
     // ===== 邊界情況 (Edge Cases) =====

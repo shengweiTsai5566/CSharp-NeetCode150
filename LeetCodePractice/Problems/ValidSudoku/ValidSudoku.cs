@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Valid Sudoku
 /// 對應 LeetCode：LC 36
@@ -66,5 +68,6 @@ public class ValidSudoku
         throw new NotImplementedException();
     }
 }
+
 
 

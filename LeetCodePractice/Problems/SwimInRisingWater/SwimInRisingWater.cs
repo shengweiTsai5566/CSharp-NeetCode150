@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Swim in Rising Water
 /// 對應 LeetCode：LC 778
@@ -52,5 +54,6 @@ public class SwimInRisingWater
         throw new NotImplementedException();
     }
 }
+
 
 

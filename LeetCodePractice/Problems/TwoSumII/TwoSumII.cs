@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Two Sum II - Input Array Is Sorted
 /// 對應 LeetCode：LC 167
@@ -53,5 +55,6 @@ public class TwoSumII
         throw new NotImplementedException();
     }
 }
+
 
 

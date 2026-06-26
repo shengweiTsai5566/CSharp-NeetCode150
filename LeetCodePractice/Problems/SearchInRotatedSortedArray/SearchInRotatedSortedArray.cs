@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Search in Rotated Sorted Array
 /// 對應 LeetCode：LC 33
@@ -50,5 +52,6 @@ public class SearchInRotatedSortedArray
         throw new NotImplementedException();
     }
 }
+
 
 

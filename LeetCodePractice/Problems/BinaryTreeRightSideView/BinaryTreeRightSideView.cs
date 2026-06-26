@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Binary Tree Right Side View
 /// 對應 LeetCode：LC 199
@@ -51,6 +53,7 @@ public class BinaryTreeRightSideView
         throw new NotImplementedException();
     }
 }
+
 
 
 

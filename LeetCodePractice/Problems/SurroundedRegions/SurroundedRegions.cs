@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Surrounded Regions
 /// 對應 LeetCode：LC 130
@@ -51,5 +53,6 @@ public class SurroundedRegions
         throw new NotImplementedException();
     }
 }
+
 
 

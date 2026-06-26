@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Group Anagrams
 /// 對應 LeetCode：LC 49
@@ -51,5 +53,6 @@ public class GroupAnagrams
         throw new NotImplementedException();
     }
 }
+
 
 

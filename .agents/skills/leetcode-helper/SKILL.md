@@ -22,8 +22,8 @@ files in `LeetCodePractice.Tests`.
 
 ## Behavior — Scaffold
 - When the user requests a new problem template, generate:
-  - `LeetCodePractice/Problems/<ProblemName>.cs`
-  - `LeetCodePractice.Tests/<ProblemName>Tests.cs`
+  - `LeetCodePractice/Problems/<ProblemName>/<ProblemName>.cs`
+  - `LeetCodePractice.Tests/<ProblemName>/<ProblemName>Tests.cs`
 - Use `ProblemTemplate.cs` as the base pattern for new problem files.
 - **Ask the user for a category tag** (e.g. "Array", "Hash Table", "String", "Tree", "DP", "Design / LRU", "Interval"). This is required — the user must provide it manually; do not auto-infer.
 - **Ask the user for a source tag** — choose from: `LeetCode` (原題), `LeetCode Variant` (延伸變形), `NeetCode 150` (精選列表), or `Custom` (自訂題目). This is required.
@@ -38,23 +38,23 @@ files in `LeetCodePractice.Tests`.
 - Do not implement the problem solution unless explicitly asked.
 
 ## Behavior — Remove
-- When the user requests to remove a problem, delete both files:
-  - `LeetCodePractice/Problems/<ProblemName>.cs`
-  - `LeetCodePractice.Tests/<ProblemName>Tests.cs`
+- When the user requests to remove a problem, delete the entire problem folder:
+  - `LeetCodePractice/Problems/<ProblemName>/`
+  - `LeetCodePractice.Tests/<ProblemName>/`
 - Confirm deletion with the user before proceeding.
 - Run `dotnet test` after deletion to verify nothing else broke.
 
 ## Behavior — Rename
 - When the user requests to rename a problem from `<OldName>` to `<NewName>`:
-  - Rename `LeetCodePractice/Problems/<OldName>.cs` → `LeetCodePractice/Problems/<NewName>.cs`
-  - Rename `LeetCodePractice.Tests/<OldName>Tests.cs` → `LeetCodePractice.Tests/<NewName>Tests.cs`
-- Update the class name inside both files to match the new name.
+  - Rename folder `LeetCodePractice/Problems/<OldName>/` → `LeetCodePractice/Problems/<NewName>/`
+  - Rename folder `LeetCodePractice.Tests/<OldName>/` → `LeetCodePractice.Tests/<NewName>/`
+- Update the class name inside the `.cs` files to match the new name.
 - Update any `using` or namespace references if needed.
 - Run `dotnet test` after renaming to verify everything still works.
 
 ## Behavior — List
-- When the user requests to list all problems, scan `LeetCodePractice/Problems/` for `.cs` files.
-- Exclude `ProblemTemplate.cs` from the listing (it is a template, not a real problem).
+- When the user requests to list all problems, scan `LeetCodePractice/Problems/` for subdirectories (each subdirectory is one problem).
+- Exclude shared type files (`ProblemTemplate.cs`, `ListNode.cs`, `TreeNode.cs`, `Node.cs`) from the listing.
 - For each problem file, read the XML doc comment (`/// <summary>`) to extract the problem title and description.
 - **Generate a `LeetCodeProblems.md` file at the repository root** containing:
   - A table of all problems with category, status icons
@@ -66,17 +66,17 @@ files in `LeetCodePractice.Tests`.
 
 ### Scaffold a new problem
 If the user asks for `MergeIntervals`, the skill should create:
-- `LeetCodePractice/Problems/MergeIntervals.cs`
-- `LeetCodePractice.Tests/MergeIntervalsTests.cs`
+- `LeetCodePractice/Problems/MergeIntervals/MergeIntervals.cs`
+- `LeetCodePractice.Tests/MergeIntervals/MergeIntervalsTests.cs`
 
 ### Remove an existing problem
 If the user asks to remove `WaferScanOptimizer`, the skill should delete:
-- `LeetCodePractice/Problems/WaferScanOptimizer.cs`
-- `LeetCodePractice.Tests/WaferScanOptimizerTests.cs`
+- `LeetCodePractice/Problems/WaferScanOptimizer/` (entire folder)
+- `LeetCodePractice.Tests/WaferScanOptimizer/` (entire folder)
 
 ### Rename an existing problem
 If the user asks to rename `TwoSum` to `TwoSumV2`, the skill should:
-- Rename both files and update class names inside them.
+- Rename both folders and update class names inside the `.cs` files.
 
 ### List all problems
 Running `lc: list` generates `LeetCodeProblems.md` at the root with full descriptions and file links, plus a chat summary.
@@ -124,8 +124,8 @@ Use these explicit commands when asking the assistant:
 - `lc: show all problems`
 
 The assistant should recognize requests that follow these command patterns and perform the corresponding operations on:
-- `LeetCodePractice/Problems/<ProblemName>.cs`
-- `LeetCodePractice.Tests/<ProblemName>Tests.cs`
+- `LeetCodePractice/Problems/<ProblemName>/` (problem folder)
+- `LeetCodePractice.Tests/<ProblemName>/` (test folder)
 
 ## Resources
 - Problem list tracking: `resources/problem-list.md` (update after each add/remove/rename)

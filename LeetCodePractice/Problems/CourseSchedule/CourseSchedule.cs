@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Course Schedule
 /// 對應 LeetCode：LC 207
@@ -47,5 +49,6 @@ public class CourseSchedule
         throw new NotImplementedException();
     }
 }
+
 
 

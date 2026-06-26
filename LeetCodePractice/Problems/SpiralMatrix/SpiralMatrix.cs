@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Spiral Matrix
 /// 對應 LeetCode：LC 54
@@ -37,5 +39,6 @@ public class SpiralMatrix
         throw new NotImplementedException();
     }
 }
+
 
 

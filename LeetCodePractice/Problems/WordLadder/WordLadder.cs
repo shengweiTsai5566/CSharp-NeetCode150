@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Word Ladder
 /// 對應 LeetCode：LC 127
@@ -53,5 +55,6 @@ public class WordLadder
         throw new NotImplementedException();
     }
 }
+
 
 

@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Plus One
 /// 對應 LeetCode：LC 66
@@ -51,5 +53,6 @@ public class PlusOne
         throw new NotImplementedException();
     }
 }
+
 
 

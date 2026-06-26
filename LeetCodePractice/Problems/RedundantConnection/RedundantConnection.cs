@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Redundant Connection
 /// 對應 LeetCode：LC 684
@@ -47,5 +49,6 @@ public class RedundantConnection
         throw new NotImplementedException();
     }
 }
+
 
 

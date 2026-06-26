@@ -338,6 +338,8 @@ TwoSum/
 
 ---
 
-## 📝 授權
+## 📝 授權與貢獻
 
-僅供個人學習與面試準備使用。
+- 僅供個人學習與面試準備使用。
+- 想貢獻？請參考 [`CONTRIBUTING.md`](CONTRIBUTING.md)
+- 英文版：[`README.en.md`](README.en.md)

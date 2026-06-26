@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Min Cost to Connect All Points
 /// 對應 LeetCode：LC 1584
@@ -43,5 +45,6 @@ public class MinCostToConnectAllPoints
         throw new NotImplementedException();
     }
 }
+
 
 

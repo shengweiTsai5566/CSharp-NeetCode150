@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Min Stack
 /// 對應 LeetCode：LC 155
@@ -74,5 +76,6 @@ public class MinStack
         throw new NotImplementedException();
     }
 }
+
 
 

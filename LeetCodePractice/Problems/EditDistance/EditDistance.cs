@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Edit Distance
 /// 對應 LeetCode：LC 72
@@ -51,5 +53,6 @@ public class EditDistance
         throw new NotImplementedException();
     }
 }
+
 
 

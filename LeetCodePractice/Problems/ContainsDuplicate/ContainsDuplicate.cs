@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Contains Duplicate
 /// 對應 LeetCode：LC 217
@@ -49,5 +51,6 @@ public class ContainsDuplicate
         throw new NotImplementedException();
     }
 }
+
 
 

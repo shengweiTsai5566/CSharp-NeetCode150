@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Find Median from Data Stream
 /// 對應 LeetCode：LC 295
@@ -67,5 +69,6 @@ public class FindMedianFromDataStream
         throw new NotImplementedException();
     }
 }
+
 
 

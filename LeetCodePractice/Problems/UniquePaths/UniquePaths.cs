@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Unique Paths
 /// 對應 LeetCode：LC 62
@@ -39,5 +41,6 @@ public class UniquePaths
         throw new NotImplementedException();
     }
 }
+
 
 

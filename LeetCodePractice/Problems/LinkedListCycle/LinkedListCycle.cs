@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Linked List Cycle
 /// 對應 LeetCode：LC 141
@@ -51,6 +53,7 @@ public class LinkedListCycle
         throw new NotImplementedException();
     }
 }
+
 
 
 

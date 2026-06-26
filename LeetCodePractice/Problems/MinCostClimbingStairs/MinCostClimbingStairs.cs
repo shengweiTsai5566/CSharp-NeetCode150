@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Min Cost Climbing Stairs
 /// 對應 LeetCode：LC 746
@@ -48,5 +50,6 @@ public class MinCostClimbingStairs
         throw new NotImplementedException();
     }
 }
+
 
 

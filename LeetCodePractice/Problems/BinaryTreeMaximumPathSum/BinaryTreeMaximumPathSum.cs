@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Binary Tree Maximum Path Sum
 /// 對應 LeetCode：LC 124
@@ -39,6 +41,7 @@ public class BinaryTreeMaximumPathSum
         throw new NotImplementedException();
     }
 }
+
 
 
 

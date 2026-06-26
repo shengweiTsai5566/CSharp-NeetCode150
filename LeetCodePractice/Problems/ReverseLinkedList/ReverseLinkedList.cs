@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Reverse Linked List
 /// 對應 LeetCode：LC 206
@@ -42,6 +44,7 @@ public class ReverseLinkedList
         throw new NotImplementedException();
     }
 }
+
 
 
 

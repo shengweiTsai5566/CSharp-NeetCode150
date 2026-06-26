@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Generate Parentheses
 /// 對應 LeetCode：LC 22
@@ -31,5 +33,6 @@ public class GenerateParentheses
         throw new NotImplementedException();
     }
 }
+
 
 

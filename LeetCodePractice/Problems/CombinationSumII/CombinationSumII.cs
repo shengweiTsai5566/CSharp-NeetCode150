@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Combination Sum II
 /// 對應 LeetCode：LC 40
@@ -49,5 +51,6 @@ public class CombinationSumII
         throw new NotImplementedException();
     }
 }
+
 
 

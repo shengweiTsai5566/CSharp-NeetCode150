@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Design Add and Search Words Data Structure
 /// 對應 LeetCode：LC 211
@@ -61,5 +63,6 @@ public class DesignAddAndSearchWordsDataStructure
         throw new NotImplementedException();
     }
 }
+
 
 

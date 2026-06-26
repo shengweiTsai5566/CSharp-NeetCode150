@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Target Sum
 /// 對應 LeetCode：LC 494
@@ -49,5 +51,6 @@ public class TargetSum
         throw new NotImplementedException();
     }
 }
+
 
 

@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Sum of Two Integers
 /// 對應 LeetCode：LC 371
@@ -31,5 +33,6 @@ public class SumOfTwoIntegers
         throw new NotImplementedException();
     }
 }
+
 
 

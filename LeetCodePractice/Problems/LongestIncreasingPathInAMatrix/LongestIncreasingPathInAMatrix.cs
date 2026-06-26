@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Longest Increasing Path in a Matrix
 /// 對應 LeetCode：LC 329
@@ -46,5 +48,6 @@ public class LongestIncreasingPathInAMatrix
         throw new NotImplementedException();
     }
 }
+
 
 

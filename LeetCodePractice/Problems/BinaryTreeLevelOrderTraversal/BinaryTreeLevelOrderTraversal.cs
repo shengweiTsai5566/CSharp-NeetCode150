@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Binary Tree Level Order Traversal
 /// 對應 LeetCode：LC 102
@@ -38,6 +40,7 @@ public class BinaryTreeLevelOrderTraversal
         throw new NotImplementedException();
     }
 }
+
 
 
 

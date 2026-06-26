@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Lowest Common Ancestor of a Binary Search Tree
 /// 對應 LeetCode：LC 235
@@ -48,6 +50,7 @@ public class LowestCommonAncestorOfBST
         throw new NotImplementedException();
     }
 }
+
 
 
 

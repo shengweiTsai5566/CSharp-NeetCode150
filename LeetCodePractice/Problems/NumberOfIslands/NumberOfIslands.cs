@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Number of Islands
 /// 對應 LeetCode：LC 200
@@ -49,5 +51,6 @@ public class NumberOfIslands
         throw new NotImplementedException();
     }
 }
+
 
 

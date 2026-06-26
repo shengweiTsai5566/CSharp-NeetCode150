@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Insert Interval
 /// 對應 LeetCode：LC 57
@@ -48,5 +50,6 @@ public class InsertInterval
         throw new NotImplementedException();
     }
 }
+
 
 

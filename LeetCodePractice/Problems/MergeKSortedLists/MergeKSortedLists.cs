@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Merge k Sorted Lists
 /// 對應 LeetCode：LC 23
@@ -56,6 +58,7 @@ public class MergeKSortedLists
         throw new NotImplementedException();
     }
 }
+
 
 
 

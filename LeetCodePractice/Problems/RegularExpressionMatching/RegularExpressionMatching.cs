@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Regular Expression Matching
 /// 對應 LeetCode：LC 10
@@ -53,5 +55,6 @@ public class RegularExpressionMatching
         throw new NotImplementedException();
     }
 }
+
 
 

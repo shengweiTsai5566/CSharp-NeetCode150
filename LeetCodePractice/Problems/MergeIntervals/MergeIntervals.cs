@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Merge Intervals
 /// 對應 LeetCode：LC 56
@@ -43,5 +45,6 @@ public class MergeIntervals
         throw new NotImplementedException();
     }
 }
+
 
 

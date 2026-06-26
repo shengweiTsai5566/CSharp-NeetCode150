@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Palindromic Substrings
 /// 對應 LeetCode：LC 647
@@ -39,5 +41,6 @@ public class PalindromicSubstrings
         throw new NotImplementedException();
     }
 }
+
 
 

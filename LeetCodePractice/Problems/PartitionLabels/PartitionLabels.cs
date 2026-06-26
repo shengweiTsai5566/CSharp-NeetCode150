@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Partition Labels
 /// 對應 LeetCode：LC 763
@@ -41,5 +43,6 @@ public class PartitionLabels
         throw new NotImplementedException();
     }
 }
+
 
 

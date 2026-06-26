@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Merge Two Sorted Lists
 /// 對應 LeetCode：LC 21
@@ -44,6 +46,7 @@ public class MergeTwoSortedLists
         throw new NotImplementedException();
     }
 }
+
 
 
 

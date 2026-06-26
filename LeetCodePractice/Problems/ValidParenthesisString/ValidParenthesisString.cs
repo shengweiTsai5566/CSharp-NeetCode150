@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Valid Parenthesis String
 /// 對應 LeetCode：LC 678
@@ -48,5 +50,6 @@ public class ValidParenthesisString
         throw new NotImplementedException();
     }
 }
+
 
 

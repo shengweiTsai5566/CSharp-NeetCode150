@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Coin Change II
 /// 對應 LeetCode：LC 518
@@ -54,5 +56,6 @@ public class CoinChangeII
         throw new NotImplementedException();
     }
 }
+
 
 

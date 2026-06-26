@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Maximum Product Subarray
 /// 對應 LeetCode：LC 152
@@ -41,5 +43,6 @@ public class MaximumProductSubarray
         throw new NotImplementedException();
     }
 }
+
 
 

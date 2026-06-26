@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Maximum Subarray
 /// 對應 LeetCode：LC 53
@@ -45,5 +47,6 @@ public class MaximumSubarray
         throw new NotImplementedException();
     }
 }
+
 
 

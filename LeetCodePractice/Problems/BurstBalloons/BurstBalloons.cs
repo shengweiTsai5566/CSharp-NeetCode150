@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Burst Balloons
 /// 對應 LeetCode：LC 312
@@ -42,5 +44,6 @@ public class BurstBalloons
         throw new NotImplementedException();
     }
 }
+
 
 

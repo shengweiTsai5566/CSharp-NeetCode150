@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Longest Palindromic Substring
 /// 對應 LeetCode：LC 5
@@ -34,5 +36,6 @@ public class LongestPalindromicSubstring
         throw new NotImplementedException();
     }
 }
+
 
 

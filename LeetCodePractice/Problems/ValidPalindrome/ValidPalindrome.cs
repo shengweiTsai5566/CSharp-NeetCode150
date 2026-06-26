@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Valid Palindrome
 /// 對應 LeetCode：LC 125
@@ -44,5 +46,6 @@ public class ValidPalindrome
         throw new NotImplementedException();
     }
 }
+
 
 

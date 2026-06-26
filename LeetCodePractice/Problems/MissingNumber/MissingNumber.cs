@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Missing Number
 /// 對應 LeetCode：LC 268
@@ -69,5 +71,6 @@ public class MissingNumber
         throw new NotImplementedException();
     }
 }
+
 
 

@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Reverse Nodes in k-Group
 /// 對應 LeetCode：LC 25
@@ -43,6 +45,7 @@ public class ReverseNodesInKGroup
         throw new NotImplementedException();
     }
 }
+
 
 
 

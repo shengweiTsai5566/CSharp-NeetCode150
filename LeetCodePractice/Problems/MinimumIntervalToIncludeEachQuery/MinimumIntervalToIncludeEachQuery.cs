@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Minimum Interval to Include Each Query
 /// 對應 LeetCode：LC 1851
@@ -53,5 +55,6 @@ public class MinimumIntervalToIncludeEachQuery
         throw new NotImplementedException();
     }
 }
+
 
 

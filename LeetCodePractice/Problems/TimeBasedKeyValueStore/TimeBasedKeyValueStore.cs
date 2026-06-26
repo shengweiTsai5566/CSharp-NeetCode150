@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Time Based Key-Value Store
 /// 對應 LeetCode：LC 981
@@ -60,5 +62,6 @@ public class TimeBasedKeyValueStore
         throw new NotImplementedException();
     }
 }
+
 
 

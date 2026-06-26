@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Network Delay Time
 /// 對應 LeetCode：LC 743
@@ -50,5 +52,6 @@ public class NetworkDelayTime
         throw new NotImplementedException();
     }
 }
+
 
 

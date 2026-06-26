@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Partition Equal Subset Sum
 /// 對應 LeetCode：LC 416
@@ -35,5 +37,6 @@ public class PartitionEqualSubsetSum
         throw new NotImplementedException();
     }
 }
+
 
 

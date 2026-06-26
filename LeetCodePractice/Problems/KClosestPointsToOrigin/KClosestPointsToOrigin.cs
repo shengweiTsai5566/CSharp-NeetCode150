@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// K Closest Points to Origin
 /// 對應 LeetCode：LC 973
@@ -43,5 +45,6 @@ public class KClosestPointsToOrigin
         throw new NotImplementedException();
     }
 }
+
 
 

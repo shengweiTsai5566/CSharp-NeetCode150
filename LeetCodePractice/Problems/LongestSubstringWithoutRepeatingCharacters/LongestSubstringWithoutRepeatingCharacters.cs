@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Longest Substring Without Repeating Characters
 /// 對應 LeetCode：LC 3
@@ -42,5 +44,6 @@ public class LongestSubstringWithoutRepeatingCharacters
         throw new NotImplementedException();
     }
 }
+
 
 

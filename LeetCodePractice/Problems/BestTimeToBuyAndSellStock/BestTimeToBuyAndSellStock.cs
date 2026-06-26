@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Best Time to Buy and Sell Stock
 /// 對應 LeetCode：LC 121
@@ -40,5 +42,6 @@ public class BestTimeToBuyAndSellStock
         throw new NotImplementedException();
     }
 }
+
 
 

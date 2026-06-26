@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Word Search
 /// 對應 LeetCode：LC 79
@@ -50,5 +52,6 @@ public class WordSearch
         throw new NotImplementedException();
     }
 }
+
 
 

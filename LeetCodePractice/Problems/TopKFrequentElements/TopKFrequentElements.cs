@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Top K Frequent Elements
 /// 對應 LeetCode：LC 347
@@ -49,5 +51,6 @@ public class TopKFrequentElements
         throw new NotImplementedException();
     }
 }
+
 
 

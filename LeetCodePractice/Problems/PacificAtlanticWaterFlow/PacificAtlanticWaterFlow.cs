@@ -1,3 +1,5 @@
+namespace LeetCodePractice.Problems;
+
 /// <summary>
 /// Pacific Atlantic Water Flow
 /// 對應 LeetCode：LC 417
@@ -60,5 +62,6 @@ public class PacificAtlanticWaterFlow
         throw new NotImplementedException();
     }
 }
+
 
 
