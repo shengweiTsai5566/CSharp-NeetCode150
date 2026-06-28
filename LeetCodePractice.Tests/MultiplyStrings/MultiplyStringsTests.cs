@@ -8,22 +8,32 @@ public class MultiplyStringsTests
     private readonly MultiplyStrings _solver = new();
 
     [Fact]
-    public void Solve_Example1_ReturnsExpectedResult()
+    public void Solve_Example1_2_3_Returns6()
     {
-        // TODO: 補上測試案例
-        // var result = _solver.Solve(...);
-        // Assert.NotNull(result);
+        Assert.Equal("6", _solver.Solve("2", "3"));
     }
 
     [Fact]
-    public void Solve_EmptyInput_HandlesGracefully()
+    public void Solve_Example2_123_456_Returns56088()
     {
-        // TODO: 補上邊界測試
+        Assert.Equal("56088", _solver.Solve("123", "456"));
     }
 
     [Fact]
-    public void Solve_LargeInput_DoesNotThrow()
+    public void Solve_Zero_ReturnsZero()
     {
-        // TODO: 補上壓力測試
+        Assert.Equal("0", _solver.Solve("0", "12345"));
+    }
+
+    [Fact]
+    public void Solve_LargeNumbers_ReturnsCorrect()
+    {
+        Assert.Equal("121932631112635269", _solver.Solve("123456789", "987654321"));
+    }
+
+    [Fact]
+    public void Solve_SingleDigit_ReturnsProduct()
+    {
+        Assert.Equal("81", _solver.Solve("9", "9"));
     }
 }

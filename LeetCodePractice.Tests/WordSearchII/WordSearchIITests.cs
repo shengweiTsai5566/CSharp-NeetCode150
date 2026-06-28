@@ -8,22 +8,37 @@ public class WordSearchIITests
     private readonly WordSearchII _solver = new();
 
     [Fact]
-    public void Solve_Example1_ReturnsExpectedResult()
+    public void Solve_Example1_ReturnsEat_Oath()
     {
-        // TODO: 補上測試案例
-        // var result = _solver.Solve(...);
-        // Assert.NotNull(result);
+        char[][] board = [['o','a','a','n'],['e','t','a','e'],['i','h','k','r'],['i','f','l','v']];
+        var words = new string[] {"oath","pea","eat","rain"};
+        var result = _solver.Solve(board, words);
+        Assert.Contains("eat", result);
+        Assert.Contains("oath", result);
+        Assert.Equal(2, result.Count);
     }
 
     [Fact]
-    public void Solve_EmptyInput_HandlesGracefully()
+    public void Solve_Example2_ReturnsEmpty()
     {
-        // TODO: 補上邊界測試
+        char[][] board = [['a','b'],['c','d']];
+        var result = _solver.Solve(board, new string[] {"abcb"});
+        Assert.Empty(result);
     }
 
     [Fact]
-    public void Solve_LargeInput_DoesNotThrow()
+    public void Solve_FindMultiple_ReturnsAll()
     {
-        // TODO: 補上壓力測試
+        char[][] board = [['a','b'],['c','d']];
+        var words = new string[] {"ab","ac","bd","cd"};
+        var result = _solver.Solve(board, words);
+        Assert.Equal(4, result.Count);
+    }
+
+    [Fact]
+    public void Solve_EmptyBoard_ReturnsEmpty()
+    {
+        Assert.Empty(_solver.Solve([[]], new string[] {"a"}));
     }
 }
+

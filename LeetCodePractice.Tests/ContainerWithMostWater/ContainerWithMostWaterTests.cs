@@ -8,22 +8,33 @@ public class ContainerWithMostWaterTests
     private readonly ContainerWithMostWater _solver = new();
 
     [Fact]
-    public void Solve_Example1_ReturnsExpectedResult()
+    public void Solve_Example1_1_8_6_2_5_4_8_3_7_Returns49()
     {
-        // TODO: 補上測試案例
-        // var result = _solver.Solve(...);
-        // Assert.NotNull(result);
+        int[] height = [1, 8, 6, 2, 5, 4, 8, 3, 7];
+        Assert.Equal(49, _solver.Solve(height));
     }
 
     [Fact]
-    public void Solve_EmptyInput_HandlesGracefully()
+    public void Solve_Example2_1_1_Returns1()
     {
-        // TODO: 補上邊界測試
+        Assert.Equal(1, _solver.Solve([1, 1]));
     }
 
     [Fact]
-    public void Solve_LargeInput_DoesNotThrow()
+    public void Solve_TwoElements_ReturnsMin()
     {
-        // TODO: 補上壓力測試
+        Assert.Equal(4, _solver.Solve([4, 5]));
+    }
+
+    [Fact]
+    public void Solve_Increasing_ReturnsMaxArea()
+    {
+        Assert.Equal(6, _solver.Solve([1, 2, 3, 4]));
+    }
+
+    [Fact]
+    public void Solve_Decreasing_ReturnsMaxArea()
+    {
+        Assert.Equal(6, _solver.Solve([4, 3, 2, 1]));
     }
 }

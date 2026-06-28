@@ -8,22 +8,32 @@ public class HappyNumberTests
     private readonly HappyNumber _solver = new();
 
     [Fact]
-    public void Solve_Example1_ReturnsExpectedResult()
+    public void Solve_Example1_19_ReturnsTrue()
     {
-        // TODO: 補上測試案例
-        // var result = _solver.Solve(...);
-        // Assert.NotNull(result);
+        Assert.True(_solver.Solve(19));
     }
 
     [Fact]
-    public void Solve_EmptyInput_HandlesGracefully()
+    public void Solve_Example2_2_ReturnsFalse()
     {
-        // TODO: 補上邊界測試
+        Assert.False(_solver.Solve(2));
     }
 
     [Fact]
-    public void Solve_LargeInput_DoesNotThrow()
+    public void Solve_1_ReturnsTrue()
     {
-        // TODO: 補上壓力測試
+        Assert.True(_solver.Solve(1));
+    }
+
+    [Fact]
+    public void Solve_7_ReturnsTrue()
+    {
+        Assert.True(_solver.Solve(7));
+    }
+
+    [Fact]
+    public void Solve_4_ReturnsFalse()
+    {
+        Assert.False(_solver.Solve(4)); // 4 leads to cycle
     }
 }

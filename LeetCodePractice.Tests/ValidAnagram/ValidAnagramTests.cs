@@ -8,22 +8,32 @@ public class ValidAnagramTests
     private readonly ValidAnagram _solver = new();
 
     [Fact]
-    public void Solve_Example1_ReturnsExpectedResult()
+    public void Solve_Example1_Anagram_ReturnsTrue()
     {
-        // TODO: 補上測試案例
-        // var result = _solver.Solve(...);
-        // Assert.NotNull(result);
+        Assert.True(_solver.Solve("anagram", "nagaram"));
     }
 
     [Fact]
-    public void Solve_EmptyInput_HandlesGracefully()
+    public void Solve_Example2_NotAnagram_ReturnsFalse()
     {
-        // TODO: 補上邊界測試
+        Assert.False(_solver.Solve("rat", "car"));
     }
 
     [Fact]
-    public void Solve_LargeInput_DoesNotThrow()
+    public void Solve_EmptyStrings_ReturnsTrue()
     {
-        // TODO: 補上壓力測試
+        Assert.True(_solver.Solve("", ""));
+    }
+
+    [Fact]
+    public void Solve_DifferentLengths_ReturnsFalse()
+    {
+        Assert.False(_solver.Solve("abc", "abcd"));
+    }
+
+    [Fact]
+    public void Solve_SameString_ReturnsTrue()
+    {
+        Assert.True(_solver.Solve("abc", "abc"));
     }
 }

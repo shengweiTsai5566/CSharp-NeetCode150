@@ -8,22 +8,44 @@ public class RegularExpressionMatchingTests
     private readonly RegularExpressionMatching _solver = new();
 
     [Fact]
-    public void Solve_Example1_ReturnsExpectedResult()
+    public void Solve_Example1_AA_A_ReturnsFalse()
     {
-        // TODO: 補上測試案例
-        // var result = _solver.Solve(...);
-        // Assert.NotNull(result);
+        Assert.False(_solver.Solve("aa", "a"));
     }
 
     [Fact]
-    public void Solve_EmptyInput_HandlesGracefully()
+    public void Solve_Example2_AA_Star_ReturnsTrue()
     {
-        // TODO: 補上邊界測試
+        Assert.True(_solver.Solve("aa", "a*"));
     }
 
     [Fact]
-    public void Solve_LargeInput_DoesNotThrow()
+    public void Solve_Example3_Dot_ReturnsTrue()
     {
-        // TODO: 補上壓力測試
+        Assert.True(_solver.Solve("ab", ".*"));
+    }
+
+    [Fact]
+    public void Solve_ExactMatch_ReturnsTrue()
+    {
+        Assert.True(_solver.Solve("abc", "abc"));
+    }
+
+    [Fact]
+    public void Solve_EmptyPattern_ReturnsFalse()
+    {
+        Assert.False(_solver.Solve("a", ""));
+    }
+
+    [Fact]
+    public void Solve_BothEmpty_ReturnsTrue()
+    {
+        Assert.True(_solver.Solve("", ""));
+    }
+
+    [Fact]
+    public void Solve_StarZeroMatch_ReturnsTrue()
+    {
+        Assert.True(_solver.Solve("", ".*"));
     }
 }

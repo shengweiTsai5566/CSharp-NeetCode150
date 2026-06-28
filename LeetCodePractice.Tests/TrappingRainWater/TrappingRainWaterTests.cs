@@ -8,22 +8,34 @@ public class TrappingRainWaterTests
     private readonly TrappingRainWater _solver = new();
 
     [Fact]
-    public void Solve_Example1_ReturnsExpectedResult()
+    public void Solve_Example1_0_1_0_2_1_0_1_3_2_1_2_1_Returns6()
     {
-        // TODO: 補上測試案例
-        // var result = _solver.Solve(...);
-        // Assert.NotNull(result);
+        int[] height = [0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1];
+        Assert.Equal(6, _solver.Solve(height));
     }
 
     [Fact]
-    public void Solve_EmptyInput_HandlesGracefully()
+    public void Solve_Example2_4_2_0_3_2_5_Returns9()
     {
-        // TODO: 補上邊界測試
+        int[] height = [4, 2, 0, 3, 2, 5];
+        Assert.Equal(9, _solver.Solve(height));
     }
 
     [Fact]
-    public void Solve_LargeInput_DoesNotThrow()
+    public void Solve_NoTrapping_Returns0()
     {
-        // TODO: 補上壓力測試
+        Assert.Equal(0, _solver.Solve([1, 2, 3, 4]));
+    }
+
+    [Fact]
+    public void Solve_TwoElements_Returns0()
+    {
+        Assert.Equal(0, _solver.Solve([1, 2]));
+    }
+
+    [Fact]
+    public void Solve_Empty_Returns0()
+    {
+        Assert.Equal(0, _solver.Solve([]));
     }
 }

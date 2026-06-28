@@ -5,25 +5,52 @@ namespace LeetCodePractice.Tests;
 
 public class LRUCacheTests
 {
-    private readonly LRUCache _solver = new();
-
     [Fact]
-    public void Solve_Example1_ReturnsExpectedResult()
+    public void LRUCache_Example1_Works()
     {
-        // TODO: 補上測試案例
-        // var result = _solver.Solve(...);
-        // Assert.NotNull(result);
+        var cache = new LRUCache();
+        cache.Put(1, 1);
+        cache.Put(2, 2);
+        Assert.Equal(1, cache.Get(1));
+        cache.Put(3, 3); // evicts key 2
+        Assert.Equal(-1, cache.Get(2));
+        cache.Put(4, 4); // evicts key 1
+        Assert.Equal(-1, cache.Get(1));
+        Assert.Equal(3, cache.Get(3));
+        Assert.Equal(4, cache.Get(4));
     }
 
     [Fact]
-    public void Solve_EmptyInput_HandlesGracefully()
+    public void LRUCache_Capacity1_Works()
     {
-        // TODO: 補上邊界測試
+        var cache = new LRUCache();
+        cache.Put(1, 10);
+        Assert.Equal(10, cache.Get(1));
+        cache.Put(2, 20); // evicts 1
+        Assert.Equal(-1, cache.Get(1));
+        Assert.Equal(20, cache.Get(2));
     }
 
     [Fact]
-    public void Solve_LargeInput_DoesNotThrow()
+    public void LRUCache_UpdateExisting_UpdatesValue()
     {
-        // TODO: 補上壓力測試
+        var cache = new LRUCache();
+        cache.Put(1, 10);
+        cache.Put(1, 20);
+        Assert.Equal(20, cache.Get(1));
+    }
+
+    [Fact]
+    public void LRUCache_GetMakesItRecent_NoEviction()
+    {
+        var cache = new LRUCache();
+        cache.Put(1, 1);
+        cache.Put(2, 2);
+        cache.Get(1);       // makes 1 most recent
+        cache.Put(3, 3);    // evicts 2, not 1
+        Assert.Equal(1, cache.Get(1));
+        Assert.Equal(-1, cache.Get(2));
+        Assert.Equal(3, cache.Get(3));
     }
 }
+

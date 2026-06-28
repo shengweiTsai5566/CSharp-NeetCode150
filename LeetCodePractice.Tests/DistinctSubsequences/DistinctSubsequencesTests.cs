@@ -8,22 +8,32 @@ public class DistinctSubsequencesTests
     private readonly DistinctSubsequences _solver = new();
 
     [Fact]
-    public void Solve_Example1_ReturnsExpectedResult()
+    public void Solve_Example1_Rabbit_Rabbit_Returns1()
     {
-        // TODO: 補上測試案例
-        // var result = _solver.Solve(...);
-        // Assert.NotNull(result);
+        Assert.Equal(1, _solver.Solve("rabbbit", "rabbit"));
     }
 
     [Fact]
-    public void Solve_EmptyInput_HandlesGracefully()
+    public void Solve_Example2_Babgbag_Bag_Returns5()
     {
-        // TODO: 補上邊界測試
+        Assert.Equal(5, _solver.Solve("babgbag", "bag"));
     }
 
     [Fact]
-    public void Solve_LargeInput_DoesNotThrow()
+    public void Solve_EmptyT_Returns1()
     {
-        // TODO: 補上壓力測試
+        Assert.Equal(1, _solver.Solve("abc", ""));
+    }
+
+    [Fact]
+    public void Solve_EmptyS_Returns0()
+    {
+        Assert.Equal(0, _solver.Solve("", "a"));
+    }
+
+    [Fact]
+    public void Solve_BothEmpty_Returns1()
+    {
+        Assert.Equal(1, _solver.Solve("", ""));
     }
 }

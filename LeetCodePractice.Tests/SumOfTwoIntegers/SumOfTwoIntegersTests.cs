@@ -8,22 +8,32 @@ public class SumOfTwoIntegersTests
     private readonly SumOfTwoIntegers _solver = new();
 
     [Fact]
-    public void Solve_Example1_ReturnsExpectedResult()
+    public void Solve_Example1_1_2_Returns3()
     {
-        // TODO: 補上測試案例
-        // var result = _solver.Solve(...);
-        // Assert.NotNull(result);
+        Assert.Equal(3, _solver.Solve(1, 2));
     }
 
     [Fact]
-    public void Solve_EmptyInput_HandlesGracefully()
+    public void Solve_Example2_2_3_Returns5()
     {
-        // TODO: 補上邊界測試
+        Assert.Equal(5, _solver.Solve(2, 3));
     }
 
     [Fact]
-    public void Solve_LargeInput_DoesNotThrow()
+    public void Solve_Negative_ReturnsCorrect()
     {
-        // TODO: 補上壓力測試
+        Assert.Equal(-1, _solver.Solve(-2, 1));
+    }
+
+    [Fact]
+    public void Solve_Zero_ReturnsOther()
+    {
+        Assert.Equal(7, _solver.Solve(0, 7));
+    }
+
+    [Fact]
+    public void Solve_LargeNumbers_ReturnsSum()
+    {
+        Assert.Equal(1000, _solver.Solve(500, 500));
     }
 }

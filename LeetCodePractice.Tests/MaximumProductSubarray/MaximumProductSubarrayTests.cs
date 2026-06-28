@@ -8,22 +8,35 @@ public class MaximumProductSubarrayTests
     private readonly MaximumProductSubarray _solver = new();
 
     [Fact]
-    public void Solve_Example1_ReturnsExpectedResult()
+    public void Solve_Example1_2_3_Minus2_4_Returns6()
     {
-        // TODO: 補上測試案例
-        // var result = _solver.Solve(...);
-        // Assert.NotNull(result);
+        int[] nums = [2, 3, -2, 4];
+        Assert.Equal(6, _solver.Solve(nums));
     }
 
     [Fact]
-    public void Solve_EmptyInput_HandlesGracefully()
+    public void Solve_Example2_Minus2_0_Minus1_Returns0()
     {
-        // TODO: 補上邊界測試
+        int[] nums = [-2, 0, -1];
+        Assert.Equal(0, _solver.Solve(nums));
     }
 
     [Fact]
-    public void Solve_LargeInput_DoesNotThrow()
+    public void Solve_SingleNegative_ReturnsIt()
     {
-        // TODO: 補上壓力測試
+        Assert.Equal(-2, _solver.Solve([-2]));
+    }
+
+    [Fact]
+    public void Solve_TwoNegatives_ReturnsProduct()
+    {
+        Assert.Equal(6, _solver.Solve([-2, -3]));
+    }
+
+    [Fact]
+    public void Solve_AllPositive_ReturnsTotal()
+    {
+        int[] nums = [1, 2, 3, 4];
+        Assert.Equal(24, _solver.Solve(nums));
     }
 }

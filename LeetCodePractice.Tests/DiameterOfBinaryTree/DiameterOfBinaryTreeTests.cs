@@ -8,22 +8,55 @@ public class DiameterOfBinaryTreeTests
     private readonly DiameterOfBinaryTree _solver = new();
 
     [Fact]
-    public void Solve_Example1_ReturnsExpectedResult()
+    public void Solve_Example1_Returns3()
     {
-        // TODO: 補上測試案例
-        // var result = _solver.Solve(...);
-        // Assert.NotNull(result);
+        var root = new TreeNode(1)
+        {
+            left = new TreeNode(2)
+            {
+                left = new TreeNode(4),
+                right = new TreeNode(5)
+            },
+            right = new TreeNode(3)
+        };
+        Assert.Equal(3, _solver.Solve(root));
     }
 
     [Fact]
-    public void Solve_EmptyInput_HandlesGracefully()
+    public void Solve_Example2_SingleNode_Returns0()
     {
-        // TODO: 補上邊界測試
+        Assert.Equal(0, _solver.Solve(new TreeNode(1)));
     }
 
     [Fact]
-    public void Solve_LargeInput_DoesNotThrow()
+    public void Solve_LinearTree_ReturnsHeight()
     {
-        // TODO: 補上壓力測試
+        var root = new TreeNode(1)
+        {
+            right = new TreeNode(2)
+            {
+                right = new TreeNode(3)
+                {
+                    right = new TreeNode(4)
+                }
+            }
+        };
+        Assert.Equal(3, _solver.Solve(root));
+    }
+
+    [Fact]
+    public void Solve_Null_Returns0()
+    {
+        Assert.Equal(0, _solver.Solve(null!));
+    }
+
+    [Fact]
+    public void Solve_TwoNodes_Returns1()
+    {
+        var root = new TreeNode(1)
+        {
+            left = new TreeNode(2)
+        };
+        Assert.Equal(1, _solver.Solve(root));
     }
 }

@@ -5,25 +5,33 @@ namespace LeetCodePractice.Tests;
 
 public class ImplementTrieTests
 {
-    private readonly ImplementTrie _solver = new();
-
     [Fact]
-    public void Solve_Example1_ReturnsExpectedResult()
+    public void Trie_Example1_Works()
     {
-        // TODO: 補上測試案例
-        // var result = _solver.Solve(...);
-        // Assert.NotNull(result);
+        var trie = new ImplementTrie();
+        trie.Insert("apple");
+        Assert.True(trie.Search("apple"));
+        Assert.False(trie.Search("app"));
+        Assert.True(trie.StartsWith("app"));
+        trie.Insert("app");
+        Assert.True(trie.Search("app"));
     }
 
     [Fact]
-    public void Solve_EmptyInput_HandlesGracefully()
+    public void Trie_NotFound_ReturnsFalse()
     {
-        // TODO: 補上邊界測試
+        var trie = new ImplementTrie();
+        trie.Insert("hello");
+        Assert.False(trie.Search("world"));
+        Assert.False(trie.StartsWith("x"));
     }
 
     [Fact]
-    public void Solve_LargeInput_DoesNotThrow()
+    public void Trie_PrefixButNotWord_StartsWithTrue_SearchFalse()
     {
-        // TODO: 補上壓力測試
+        var trie = new ImplementTrie();
+        trie.Insert("apple");
+        Assert.True(trie.StartsWith("app"));
+        Assert.False(trie.Search("app"));
     }
 }

@@ -8,22 +8,32 @@ public class ValidPalindromeTests
     private readonly ValidPalindrome _solver = new();
 
     [Fact]
-    public void Solve_Example1_ReturnsExpectedResult()
+    public void Solve_Example1_ReturnsTrue()
     {
-        // TODO: 補上測試案例
-        // var result = _solver.Solve(...);
-        // Assert.NotNull(result);
+        Assert.True(_solver.Solve("A man, a plan, a canal: Panama"));
     }
 
     [Fact]
-    public void Solve_EmptyInput_HandlesGracefully()
+    public void Solve_Example2_ReturnsFalse()
     {
-        // TODO: 補上邊界測試
+        Assert.False(_solver.Solve("race a car"));
     }
 
     [Fact]
-    public void Solve_LargeInput_DoesNotThrow()
+    public void Solve_Example3_Empty_ReturnsTrue()
     {
-        // TODO: 補上壓力測試
+        Assert.True(_solver.Solve(" "));
+    }
+
+    [Fact]
+    public void Solve_SingleChar_ReturnsTrue()
+    {
+        Assert.True(_solver.Solve("a"));
+    }
+
+    [Fact]
+    public void Solve_AlphaNumeric_ReturnsTrue()
+    {
+        Assert.True(_solver.Solve("1b1"));
     }
 }

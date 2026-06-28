@@ -8,22 +8,31 @@ public class SubsetsIITests
     private readonly SubsetsII _solver = new();
 
     [Fact]
-    public void Solve_Example1_ReturnsExpectedResult()
+    public void Solve_Example1_1_2_2_Returns4Subsets()
     {
-        // TODO: 補上測試案例
-        // var result = _solver.Solve(...);
-        // Assert.NotNull(result);
+        int[] nums = [1, 2, 2];
+        var result = _solver.Solve(nums);
+        Assert.Equal(6, result.Count);
     }
 
     [Fact]
-    public void Solve_EmptyInput_HandlesGracefully()
+    public void Solve_Example2_0_Returns2Subsets()
     {
-        // TODO: 補上邊界測試
+        var result = _solver.Solve([0]);
+        Assert.Equal(2, result.Count);
     }
 
     [Fact]
-    public void Solve_LargeInput_DoesNotThrow()
+    public void Solve_AllUnique_Returns8Subsets()
     {
-        // TODO: 補上壓力測試
+        var result = _solver.Solve([1, 2, 3]);
+        Assert.Equal(8, result.Count);
+    }
+
+    [Fact]
+    public void Solve_Empty_ReturnsEmpty()
+    {
+        var result = _solver.Solve([]);
+        Assert.Single(result);
     }
 }

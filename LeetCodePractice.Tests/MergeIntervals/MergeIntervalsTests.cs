@@ -8,22 +8,40 @@ public class MergeIntervalsTests
     private readonly MergeIntervals _solver = new();
 
     [Fact]
-    public void Solve_Example1_ReturnsExpectedResult()
+    public void Solve_Example1_ReturnsMerged()
     {
-        // TODO: 補上測試案例
-        // var result = _solver.Solve(...);
-        // Assert.NotNull(result);
+        int[][] intervals = [[1, 3], [2, 6], [8, 10], [15, 18]];
+        var result = _solver.Solve(intervals);
+        Assert.Equal(new int[][] { [1, 6], [8, 10], [15, 18] }, result);
     }
 
     [Fact]
-    public void Solve_EmptyInput_HandlesGracefully()
+    public void Solve_Example2_ReturnsMerged()
     {
-        // TODO: 補上邊界測試
+        int[][] intervals = [[1, 4], [4, 5]];
+        var result = _solver.Solve(intervals);
+        Assert.Equal(new int[][] { [1, 5] }, result);
     }
 
     [Fact]
-    public void Solve_LargeInput_DoesNotThrow()
+    public void Solve_AllOverlapping_ReturnsOne()
     {
-        // TODO: 補上壓力測試
+        int[][] intervals = [[1, 4], [2, 5], [3, 6]];
+        var result = _solver.Solve(intervals);
+        Assert.Equal(new int[][] { [1, 6] }, result);
+    }
+
+    [Fact]
+    public void Solve_NoOverlap_ReturnsSame()
+    {
+        int[][] intervals = [[1, 2], [3, 4], [5, 6]];
+        var result = _solver.Solve(intervals);
+        Assert.Equal(intervals, result);
+    }
+
+    [Fact]
+    public void Solve_Empty_ReturnsEmpty()
+    {
+        Assert.Empty(_solver.Solve([]));
     }
 }

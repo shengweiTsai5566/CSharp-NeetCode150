@@ -8,22 +8,32 @@ public class PermutationInStringTests
     private readonly PermutationInString _solver = new();
 
     [Fact]
-    public void Solve_Example1_ReturnsExpectedResult()
+    public void Solve_Example1_ab_ReturnsTrue()
     {
-        // TODO: 補上測試案例
-        // var result = _solver.Solve(...);
-        // Assert.NotNull(result);
+        Assert.True(_solver.Solve("ab", "eidbaooo"));
     }
 
     [Fact]
-    public void Solve_EmptyInput_HandlesGracefully()
+    public void Solve_Example2_ab_ReturnsFalse()
     {
-        // TODO: 補上邊界測試
+        Assert.False(_solver.Solve("ab", "eidboaoo"));
     }
 
     [Fact]
-    public void Solve_LargeInput_DoesNotThrow()
+    public void Solve_ShortS2_ReturnsFalse()
     {
-        // TODO: 補上壓力測試
+        Assert.False(_solver.Solve("abc", "ab"));
+    }
+
+    [Fact]
+    public void Solve_ExactMatch_ReturnsTrue()
+    {
+        Assert.True(_solver.Solve("abc", "cba"));
+    }
+
+    [Fact]
+    public void Solve_EmptyS1_ReturnsTrue()
+    {
+        Assert.True(_solver.Solve("", "abc"));
     }
 }

@@ -8,22 +8,54 @@ public class LowestCommonAncestorOfBSTTests
     private readonly LowestCommonAncestorOfBST _solver = new();
 
     [Fact]
-    public void Solve_Example1_ReturnsExpectedResult()
+    public void Solve_Example1_ReturnsNode2()
     {
-        // TODO: 補上測試案例
-        // var result = _solver.Solve(...);
-        // Assert.NotNull(result);
+        var root = new TreeNode(6)
+        {
+            left = new TreeNode(2)
+            {
+                left = new TreeNode(0),
+                right = new TreeNode(4) { left = new TreeNode(3), right = new TreeNode(5) }
+            },
+            right = new TreeNode(8) { left = new TreeNode(7), right = new TreeNode(9) }
+        };
+        var result = _solver.Solve(root, new TreeNode(2), new TreeNode(8));
+        Assert.Equal(6, result.val);
     }
 
     [Fact]
-    public void Solve_EmptyInput_HandlesGracefully()
+    public void Solve_Example2_ReturnsNode2()
     {
-        // TODO: 補上邊界測試
+        var root = new TreeNode(6)
+        {
+            left = new TreeNode(2)
+            {
+                left = new TreeNode(0),
+                right = new TreeNode(4) { left = new TreeNode(3), right = new TreeNode(5) }
+            },
+            right = new TreeNode(8) { left = new TreeNode(7), right = new TreeNode(9) }
+        };
+        var result = _solver.Solve(root, new TreeNode(2), new TreeNode(4));
+        Assert.Equal(2, result.val);
     }
 
     [Fact]
-    public void Solve_LargeInput_DoesNotThrow()
+    public void Solve_RootIsLCA_ReturnsRoot()
     {
-        // TODO: 補上壓力測試
+        var root = new TreeNode(5)
+        {
+            left = new TreeNode(3),
+            right = new TreeNode(7)
+        };
+        var result = _solver.Solve(root, new TreeNode(3), new TreeNode(7));
+        Assert.Equal(5, result.val);
+    }
+
+    [Fact]
+    public void Solve_SingleNode_ReturnsNode()
+    {
+        var root = new TreeNode(1);
+        var result = _solver.Solve(root, new TreeNode(1), new TreeNode(1));
+        Assert.Equal(1, result.val);
     }
 }

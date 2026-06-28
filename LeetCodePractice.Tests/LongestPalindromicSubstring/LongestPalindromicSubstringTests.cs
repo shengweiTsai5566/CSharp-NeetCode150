@@ -8,22 +8,39 @@ public class LongestPalindromicSubstringTests
     private readonly LongestPalindromicSubstring _solver = new();
 
     [Fact]
-    public void Solve_Example1_ReturnsExpectedResult()
+    public void Solve_Example1_Babad_ReturnsBabOrAba()
     {
-        // TODO: 補上測試案例
-        // var result = _solver.Solve(...);
-        // Assert.NotNull(result);
+        var result = _solver.Solve("babad");
+        Assert.True(result == "bab" || result == "aba");
     }
 
     [Fact]
-    public void Solve_EmptyInput_HandlesGracefully()
+    public void Solve_Example2_Cbbd_ReturnsBb()
     {
-        // TODO: 補上邊界測試
+        Assert.Equal("bb", _solver.Solve("cbbd"));
     }
 
     [Fact]
-    public void Solve_LargeInput_DoesNotThrow()
+    public void Solve_SingleChar_ReturnsIt()
     {
-        // TODO: 補上壓力測試
+        Assert.Equal("a", _solver.Solve("a"));
+    }
+
+    [Fact]
+    public void Solve_TwoSame_ReturnsBoth()
+    {
+        Assert.Equal("aa", _solver.Solve("aa"));
+    }
+
+    [Fact]
+    public void Solve_AllPalindrome_ReturnsFull()
+    {
+        Assert.Equal("abcba", _solver.Solve("abcba"));
+    }
+
+    [Fact]
+    public void Solve_EmptyString_ReturnsEmpty()
+    {
+        Assert.Equal("", _solver.Solve(""));
     }
 }

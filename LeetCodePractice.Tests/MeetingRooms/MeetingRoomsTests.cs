@@ -8,22 +8,29 @@ public class MeetingRoomsTests
     private readonly MeetingRooms _solver = new();
 
     [Fact]
-    public void Solve_Example1_ReturnsExpectedResult()
+    public void Solve_Example1_ReturnsFalse()
     {
-        // TODO: 補上測試案例
-        // var result = _solver.Solve(...);
-        // Assert.NotNull(result);
+        int[][] intervals = [[0, 30], [5, 10], [15, 20]];
+        Assert.False(_solver.Solve(intervals));
     }
 
     [Fact]
-    public void Solve_EmptyInput_HandlesGracefully()
+    public void Solve_Example2_ReturnsTrue()
     {
-        // TODO: 補上邊界測試
+        int[][] intervals = [[7, 10], [2, 4]];
+        Assert.True(_solver.Solve(intervals));
     }
 
     [Fact]
-    public void Solve_LargeInput_DoesNotThrow()
+    public void Solve_Empty_ReturnsTrue()
     {
-        // TODO: 補上壓力測試
+        Assert.True(_solver.Solve([]));
+    }
+
+    [Fact]
+    public void Solve_TouchingIntervals_ReturnsTrue()
+    {
+        int[][] intervals = [[1, 5], [5, 10]];
+        Assert.True(_solver.Solve(intervals));
     }
 }

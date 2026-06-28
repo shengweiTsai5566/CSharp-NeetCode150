@@ -8,22 +8,38 @@ public class EditDistanceTests
     private readonly EditDistance _solver = new();
 
     [Fact]
-    public void Solve_Example1_ReturnsExpectedResult()
+    public void Solve_Example1_Horse_Ros_Returns3()
     {
-        // TODO: 補上測試案例
-        // var result = _solver.Solve(...);
-        // Assert.NotNull(result);
+        Assert.Equal(3, _solver.Solve("horse", "ros"));
     }
 
     [Fact]
-    public void Solve_EmptyInput_HandlesGracefully()
+    public void Solve_Example2_Intention_Execution_Returns5()
     {
-        // TODO: 補上邊界測試
+        Assert.Equal(5, _solver.Solve("intention", "execution"));
     }
 
     [Fact]
-    public void Solve_LargeInput_DoesNotThrow()
+    public void Solve_EmptyToEmpty_Returns0()
     {
-        // TODO: 補上壓力測試
+        Assert.Equal(0, _solver.Solve("", ""));
+    }
+
+    [Fact]
+    public void Solve_EmptyToNonEmpty_ReturnsLength()
+    {
+        Assert.Equal(3, _solver.Solve("", "abc"));
+    }
+
+    [Fact]
+    public void Solve_SameString_Returns0()
+    {
+        Assert.Equal(0, _solver.Solve("abc", "abc"));
+    }
+
+    [Fact]
+    public void Solve_OneCharDiff_Returns1()
+    {
+        Assert.Equal(1, _solver.Solve("a", "b"));
     }
 }

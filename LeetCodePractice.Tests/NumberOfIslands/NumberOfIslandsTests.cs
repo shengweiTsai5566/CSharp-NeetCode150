@@ -8,22 +8,46 @@ public class NumberOfIslandsTests
     private readonly NumberOfIslands _solver = new();
 
     [Fact]
-    public void Solve_Example1_ReturnsExpectedResult()
+    public void Solve_Example1_Returns1()
     {
-        // TODO: 補上測試案例
-        // var result = _solver.Solve(...);
-        // Assert.NotNull(result);
+        char[][] grid = [
+            ['1','1','1','1','0'],
+            ['1','1','0','1','0'],
+            ['1','1','0','0','0'],
+            ['0','0','0','0','0']
+        ];
+        Assert.Equal(1, _solver.Solve(grid));
     }
 
     [Fact]
-    public void Solve_EmptyInput_HandlesGracefully()
+    public void Solve_Example2_Returns3()
     {
-        // TODO: 補上邊界測試
+        char[][] grid = [
+            ['1','1','0','0','0'],
+            ['1','1','0','0','0'],
+            ['0','0','1','0','0'],
+            ['0','0','0','1','1']
+        ];
+        Assert.Equal(3, _solver.Solve(grid));
     }
 
     [Fact]
-    public void Solve_LargeInput_DoesNotThrow()
+    public void Solve_AllWater_Returns0()
     {
-        // TODO: 補上壓力測試
+        char[][] grid = [['0', '0'], ['0', '0']];
+        Assert.Equal(0, _solver.Solve(grid));
+    }
+
+    [Fact]
+    public void Solve_SingleIsland_Returns1()
+    {
+        char[][] grid = [['1']];
+        Assert.Equal(1, _solver.Solve(grid));
+    }
+
+    [Fact]
+    public void Solve_Empty_Returns0()
+    {
+        Assert.Equal(0, _solver.Solve([[]]));
     }
 }

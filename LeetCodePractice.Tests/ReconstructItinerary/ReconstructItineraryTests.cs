@@ -8,22 +8,26 @@ public class ReconstructItineraryTests
     private readonly ReconstructItinerary _solver = new();
 
     [Fact]
-    public void Solve_Example1_ReturnsExpectedResult()
+    public void Solve_Example1_ReturnsCorrect()
     {
-        // TODO: 補上測試案例
-        // var result = _solver.Solve(...);
-        // Assert.NotNull(result);
+        var tickets = new List<IList<string>> { new List<string> { "MUC", "LHR" }, new List<string> { "JFK", "MUC" }, new List<string> { "SFO", "SJC" }, new List<string> { "LHR", "SFO" } };
+        var result = _solver.Solve(tickets);
+        Assert.Equal(new List<string> { "JFK", "MUC", "LHR", "SFO", "SJC" }, result);
     }
 
     [Fact]
-    public void Solve_EmptyInput_HandlesGracefully()
+    public void Solve_Example2_ReturnsCorrect()
     {
-        // TODO: 補上邊界測試
+        var tickets = new List<IList<string>> { new List<string> { "JFK", "SFO" }, new List<string> { "JFK", "ATL" }, new List<string> { "SFO", "ATL" }, new List<string> { "ATL", "JFK" }, new List<string> { "ATL", "SFO" } };
+        var result = _solver.Solve(tickets);
+        Assert.Equal(new List<string> { "JFK", "ATL", "JFK", "SFO", "ATL", "SFO" }, result);
     }
 
     [Fact]
-    public void Solve_LargeInput_DoesNotThrow()
+    public void Solve_SingleTicket_ReturnsIt()
     {
-        // TODO: 補上壓力測試
+        var tickets = new List<IList<string>> { new List<string> { "JFK", "NRT" } };
+        var result = _solver.Solve(tickets);
+        Assert.Equal(new List<string> { "JFK", "NRT" }, result);
     }
 }

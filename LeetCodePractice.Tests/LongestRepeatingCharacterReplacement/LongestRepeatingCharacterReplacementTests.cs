@@ -8,22 +8,32 @@ public class LongestRepeatingCharacterReplacementTests
     private readonly LongestRepeatingCharacterReplacement _solver = new();
 
     [Fact]
-    public void Solve_Example1_ReturnsExpectedResult()
+    public void Solve_Example1_ABAB_K2_Returns4()
     {
-        // TODO: 補上測試案例
-        // var result = _solver.Solve(...);
-        // Assert.NotNull(result);
+        Assert.Equal(4, _solver.Solve("ABAB", 2));
     }
 
     [Fact]
-    public void Solve_EmptyInput_HandlesGracefully()
+    public void Solve_Example2_AABABBA_K1_Returns4()
     {
-        // TODO: 補上邊界測試
+        Assert.Equal(4, _solver.Solve("AABABBA", 1));
     }
 
     [Fact]
-    public void Solve_LargeInput_DoesNotThrow()
+    public void Solve_SingleChar_Returns1()
     {
-        // TODO: 補上壓力測試
+        Assert.Equal(1, _solver.Solve("A", 0));
+    }
+
+    [Fact]
+    public void Solve_AllSame_ReturnsLength()
+    {
+        Assert.Equal(5, _solver.Solve("AAAAA", 2));
+    }
+
+    [Fact]
+    public void Solve_EmptyString_Returns0()
+    {
+        Assert.Equal(0, _solver.Solve("", 1));
     }
 }

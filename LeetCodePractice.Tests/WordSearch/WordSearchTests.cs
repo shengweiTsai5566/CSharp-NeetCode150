@@ -8,22 +8,36 @@ public class WordSearchTests
     private readonly WordSearch _solver = new();
 
     [Fact]
-    public void Solve_Example1_ReturnsExpectedResult()
+    public void Solve_Example1_ReturnsTrue()
     {
-        // TODO: 補上測試案例
-        // var result = _solver.Solve(...);
-        // Assert.NotNull(result);
+        char[][] board = [['A','B','C','E'],['S','F','C','S'],['A','D','E','E']];
+        Assert.True(_solver.Solve(board, "ABCCED"));
     }
 
     [Fact]
-    public void Solve_EmptyInput_HandlesGracefully()
+    public void Solve_Example2_ReturnsTrue()
     {
-        // TODO: 補上邊界測試
+        char[][] board = [['A','B','C','E'],['S','F','C','S'],['A','D','E','E']];
+        Assert.True(_solver.Solve(board, "SEE"));
     }
 
     [Fact]
-    public void Solve_LargeInput_DoesNotThrow()
+    public void Solve_Example3_ReturnsFalse()
     {
-        // TODO: 補上壓力測試
+        char[][] board = [['A','B','C','E'],['S','F','C','S'],['A','D','E','E']];
+        Assert.False(_solver.Solve(board, "ABCB"));
+    }
+
+    [Fact]
+    public void Solve_SingleCharFound_ReturnsTrue()
+    {
+        char[][] board = [['X']];
+        Assert.True(_solver.Solve(board, "X"));
+    }
+
+    [Fact]
+    public void Solve_EmptyBoard_ReturnsFalse()
+    {
+        Assert.False(_solver.Solve([[]], "A"));
     }
 }

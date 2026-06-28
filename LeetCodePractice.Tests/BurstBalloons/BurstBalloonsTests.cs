@@ -8,22 +8,34 @@ public class BurstBalloonsTests
     private readonly BurstBalloons _solver = new();
 
     [Fact]
-    public void Solve_Example1_ReturnsExpectedResult()
+    public void Solve_Example1_3_1_5_8_Returns167()
     {
-        // TODO: 補上測試案例
-        // var result = _solver.Solve(...);
-        // Assert.NotNull(result);
+        int[] nums = [3, 1, 5, 8];
+        Assert.Equal(167, _solver.Solve(nums));
     }
 
     [Fact]
-    public void Solve_EmptyInput_HandlesGracefully()
+    public void Solve_Example2_1_5_Returns10()
     {
-        // TODO: 補上邊界測試
+        int[] nums = [1, 5];
+        Assert.Equal(10, _solver.Solve(nums));
     }
 
     [Fact]
-    public void Solve_LargeInput_DoesNotThrow()
+    public void Solve_SingleBalloon_ReturnsItsValue()
     {
-        // TODO: 補上壓力測試
+        Assert.Equal(10, _solver.Solve([10]));
+    }
+
+    [Fact]
+    public void Solve_EmptyArray_Returns0()
+    {
+        Assert.Equal(0, _solver.Solve([]));
+    }
+
+    [Fact]
+    public void Solve_TwoSame_ReturnsCorrect()
+    {
+        Assert.Equal(4, _solver.Solve([2, 2]));
     }
 }

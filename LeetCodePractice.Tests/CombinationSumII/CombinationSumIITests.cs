@@ -8,22 +8,34 @@ public class CombinationSumIITests
     private readonly CombinationSumII _solver = new();
 
     [Fact]
-    public void Solve_Example1_ReturnsExpectedResult()
+    public void Solve_Example1_10_1_2_7_6_1_5_Target8_Returns4Combos()
     {
-        // TODO: 補上測試案例
-        // var result = _solver.Solve(...);
-        // Assert.NotNull(result);
+        int[] candidates = [10, 1, 2, 7, 6, 1, 5];
+        var result = _solver.Solve(candidates, 8);
+        Assert.Equal(4, result.Count);
+        Assert.Contains(result, r => r.SequenceEqual(new List<int> { 1, 1, 6 }));
+        Assert.Contains(result, r => r.SequenceEqual(new List<int> { 1, 2, 5 }));
+        Assert.Contains(result, r => r.SequenceEqual(new List<int> { 1, 7 }));
+        Assert.Contains(result, r => r.SequenceEqual(new List<int> { 2, 6 }));
     }
 
     [Fact]
-    public void Solve_EmptyInput_HandlesGracefully()
+    public void Solve_Example2_2_5_2_1_2_Target5_Returns2Combos()
     {
-        // TODO: 補上邊界測試
+        int[] candidates = [2, 5, 2, 1, 2];
+        var result = _solver.Solve(candidates, 5);
+        Assert.Equal(2, result.Count);
     }
 
     [Fact]
-    public void Solve_LargeInput_DoesNotThrow()
+    public void Solve_EmptyCandidates_ReturnsEmpty()
     {
-        // TODO: 補上壓力測試
+        Assert.Empty(_solver.Solve([], 5));
+    }
+
+    [Fact]
+    public void Solve_NoCombination_ReturnsEmpty()
+    {
+        Assert.Empty(_solver.Solve([3, 5], 2));
     }
 }

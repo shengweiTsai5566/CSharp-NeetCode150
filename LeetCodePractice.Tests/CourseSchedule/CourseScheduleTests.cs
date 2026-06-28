@@ -8,22 +8,35 @@ public class CourseScheduleTests
     private readonly CourseSchedule _solver = new();
 
     [Fact]
-    public void Solve_Example1_ReturnsExpectedResult()
+    public void Solve_Example1_2Courses_1Prereq_ReturnsTrue()
     {
-        // TODO: 補上測試案例
-        // var result = _solver.Solve(...);
-        // Assert.NotNull(result);
+        int[][] prereqs = [[1, 0]];
+        Assert.True(_solver.Solve(2, prereqs));
     }
 
     [Fact]
-    public void Solve_EmptyInput_HandlesGracefully()
+    public void Solve_Example2_2Courses_Cycle_ReturnsFalse()
     {
-        // TODO: 補上邊界測試
+        int[][] prereqs = [[1, 0], [0, 1]];
+        Assert.False(_solver.Solve(2, prereqs));
     }
 
     [Fact]
-    public void Solve_LargeInput_DoesNotThrow()
+    public void Solve_NoPrereqs_ReturnsTrue()
     {
-        // TODO: 補上壓力測試
+        Assert.True(_solver.Solve(3, []));
+    }
+
+    [Fact]
+    public void Solve_SingleCourse_ReturnsTrue()
+    {
+        Assert.True(_solver.Solve(1, []));
+    }
+
+    [Fact]
+    public void Solve_LinearChain_ReturnsTrue()
+    {
+        int[][] prereqs = [[1, 0], [2, 1], [3, 2]];
+        Assert.True(_solver.Solve(4, prereqs));
     }
 }

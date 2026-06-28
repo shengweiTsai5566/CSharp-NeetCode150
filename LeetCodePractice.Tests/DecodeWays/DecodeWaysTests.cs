@@ -8,22 +8,44 @@ public class DecodeWaysTests
     private readonly DecodeWays _solver = new();
 
     [Fact]
-    public void Solve_Example1_ReturnsExpectedResult()
+    public void Solve_Example1_12_Returns2()
     {
-        // TODO: 補上測試案例
-        // var result = _solver.Solve(...);
-        // Assert.NotNull(result);
+        Assert.Equal(2, _solver.Solve("12"));
     }
 
     [Fact]
-    public void Solve_EmptyInput_HandlesGracefully()
+    public void Solve_Example2_226_Returns3()
     {
-        // TODO: 補上邊界測試
+        Assert.Equal(3, _solver.Solve("226"));
     }
 
     [Fact]
-    public void Solve_LargeInput_DoesNotThrow()
+    public void Solve_Example3_06_Returns0()
     {
-        // TODO: 補上壓力測試
+        Assert.Equal(0, _solver.Solve("06"));
+    }
+
+    [Fact]
+    public void Solve_SingleDigit_Returns1()
+    {
+        Assert.Equal(1, _solver.Solve("5"));
+    }
+
+    [Fact]
+    public void Solve_Zero_Returns0()
+    {
+        Assert.Equal(0, _solver.Solve("0"));
+    }
+
+    [Fact]
+    public void Solve_10_Returns1()
+    {
+        Assert.Equal(1, _solver.Solve("10"));
+    }
+
+    [Fact]
+    public void Solve_27_Returns1()
+    {
+        Assert.Equal(1, _solver.Solve("27"));
     }
 }

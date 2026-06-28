@@ -8,22 +8,29 @@ public class PartitionLabelsTests
     private readonly PartitionLabels _solver = new();
 
     [Fact]
-    public void Solve_Example1_ReturnsExpectedResult()
+    public void Solve_Example1_ababcbacadefegdehijhklij_Returns9_7_8()
     {
-        // TODO: 補上測試案例
-        // var result = _solver.Solve(...);
-        // Assert.NotNull(result);
+        var result = _solver.Solve("ababcbacadefegdehijhklij");
+        Assert.Equal(new List<int> { 9, 7, 8 }, result);
     }
 
     [Fact]
-    public void Solve_EmptyInput_HandlesGracefully()
+    public void Solve_Example2_eccbbbbdec_Returns10()
     {
-        // TODO: 補上邊界測試
+        var result = _solver.Solve("eccbbbbdec");
+        Assert.Equal(new List<int> { 10 }, result);
     }
 
     [Fact]
-    public void Solve_LargeInput_DoesNotThrow()
+    public void Solve_AllUnique_ReturnsAll_1()
     {
-        // TODO: 補上壓力測試
+        var result = _solver.Solve("abcdef");
+        Assert.Equal(new List<int> { 1, 1, 1, 1, 1, 1 }, result);
+    }
+
+    [Fact]
+    public void Solve_Empty_ReturnsEmpty()
+    {
+        Assert.Empty(_solver.Solve(""));
     }
 }

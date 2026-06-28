@@ -8,22 +8,63 @@ public class BalancedBinaryTreeTests
     private readonly BalancedBinaryTree _solver = new();
 
     [Fact]
-    public void Solve_Example1_ReturnsExpectedResult()
+    public void Solve_BalancedTree_ReturnsTrue()
     {
-        // TODO: 補上測試案例
-        // var result = _solver.Solve(...);
-        // Assert.NotNull(result);
+        // [3,9,20,null,null,15,7]
+        var root = new TreeNode(3)
+        {
+            left = new TreeNode(9),
+            right = new TreeNode(20)
+            {
+                left = new TreeNode(15),
+                right = new TreeNode(7)
+            }
+        };
+        Assert.True(_solver.Solve(root));
     }
 
     [Fact]
-    public void Solve_EmptyInput_HandlesGracefully()
+    public void Solve_UnbalancedTree_ReturnsFalse()
     {
-        // TODO: 補上邊界測試
+        // [1,2,2,3,3,null,null,4,4]
+        var root = new TreeNode(1)
+        {
+            left = new TreeNode(2)
+            {
+                left = new TreeNode(3)
+                {
+                    left = new TreeNode(4),
+                    right = new TreeNode(4)
+                },
+                right = new TreeNode(3)
+            },
+            right = new TreeNode(2)
+        };
+        Assert.False(_solver.Solve(root));
     }
 
     [Fact]
-    public void Solve_LargeInput_DoesNotThrow()
+    public void Solve_EmptyTree_ReturnsTrue()
     {
-        // TODO: 補上壓力測試
+        Assert.True(_solver.Solve(null!));
+    }
+
+    [Fact]
+    public void Solve_SingleNode_ReturnsTrue()
+    {
+        Assert.True(_solver.Solve(new TreeNode(1)));
+    }
+
+    [Fact]
+    public void Solve_LeftHeavy_ReturnsFalse()
+    {
+        var root = new TreeNode(1)
+        {
+            left = new TreeNode(2)
+            {
+                left = new TreeNode(3)
+            }
+        };
+        Assert.False(_solver.Solve(root));
     }
 }

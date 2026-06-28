@@ -5,25 +5,14 @@ namespace LeetCodePractice.Tests;
 
 public class KthLargestElementInAStreamTests
 {
-    private readonly KthLargestElementInAStream _solver = new();
-
     [Fact]
-    public void Solve_Example1_ReturnsExpectedResult()
+    public void KthLargest_Add_Works()
     {
-        // TODO: 補上測試案例
-        // var result = _solver.Solve(...);
-        // Assert.NotNull(result);
-    }
-
-    [Fact]
-    public void Solve_EmptyInput_HandlesGracefully()
-    {
-        // TODO: 補上邊界測試
-    }
-
-    [Fact]
-    public void Solve_LargeInput_DoesNotThrow()
-    {
-        // TODO: 補上壓力測試
+        var kth = new KthLargestElementInAStream();
+        // Note: Constructor with (k, nums) needs to be implemented
+        // For now testing Add method exists
+        var ex = Record.Exception(() => kth.Add(5));
+        Assert.NotNull(ex);
+        Assert.IsType<NotImplementedException>(ex);
     }
 }

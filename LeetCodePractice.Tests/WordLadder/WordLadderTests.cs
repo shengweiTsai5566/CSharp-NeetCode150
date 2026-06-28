@@ -8,22 +8,29 @@ public class WordLadderTests
     private readonly WordLadder _solver = new();
 
     [Fact]
-    public void Solve_Example1_ReturnsExpectedResult()
+    public void Solve_Example1_Returns5()
     {
-        // TODO: 補上測試案例
-        // var result = _solver.Solve(...);
-        // Assert.NotNull(result);
+        var wordList = new List<string> { "hot", "dot", "dog", "lot", "log", "cog" };
+        Assert.Equal(5, _solver.Solve("hit", "cog", wordList));
     }
 
     [Fact]
-    public void Solve_EmptyInput_HandlesGracefully()
+    public void Solve_Example2_Returns0()
     {
-        // TODO: 補上邊界測試
+        var wordList = new List<string> { "hot", "dot", "dog", "lot", "log" };
+        Assert.Equal(0, _solver.Solve("hit", "cog", wordList));
     }
 
     [Fact]
-    public void Solve_LargeInput_DoesNotThrow()
+    public void Solve_SameWord_Returns1()
     {
-        // TODO: 補上壓力測試
+        var wordList = new List<string> { "abc" };
+        Assert.Equal(1, _solver.Solve("abc", "abc", wordList));
+    }
+
+    [Fact]
+    public void Solve_EmptyWordList_Returns0()
+    {
+        Assert.Equal(0, _solver.Solve("hit", "cog", new List<string>()));
     }
 }

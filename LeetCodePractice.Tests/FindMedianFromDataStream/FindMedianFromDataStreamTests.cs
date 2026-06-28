@@ -5,25 +5,55 @@ namespace LeetCodePractice.Tests;
 
 public class FindMedianFromDataStreamTests
 {
-    private readonly FindMedianFromDataStream _solver = new();
-
     [Fact]
-    public void Solve_Example1_ReturnsExpectedResult()
+    public void MedianFinder_Example1_Works()
     {
-        // TODO: 補上測試案例
-        // var result = _solver.Solve(...);
-        // Assert.NotNull(result);
+        var mf = new FindMedianFromDataStream();
+        mf.AddNum(1);
+        mf.AddNum(2);
+        Assert.Equal(1.5, mf.FindMedian());
+        mf.AddNum(3);
+        Assert.Equal(2.0, mf.FindMedian());
     }
 
     [Fact]
-    public void Solve_EmptyInput_HandlesGracefully()
+    public void MedianFinder_SingleElement_ReturnsIt()
     {
-        // TODO: 補上邊界測試
+        var mf = new FindMedianFromDataStream();
+        mf.AddNum(5);
+        Assert.Equal(5.0, mf.FindMedian());
     }
 
     [Fact]
-    public void Solve_LargeInput_DoesNotThrow()
+    public void MedianFinder_EvenCount_ReturnsAverage()
     {
-        // TODO: 補上壓力測試
+        var mf = new FindMedianFromDataStream();
+        mf.AddNum(1);
+        mf.AddNum(2);
+        mf.AddNum(3);
+        mf.AddNum(4);
+        Assert.Equal(2.5, mf.FindMedian());
+    }
+
+    [Fact]
+    public void MedianFinder_NegativeNumbers_Works()
+    {
+        var mf = new FindMedianFromDataStream();
+        mf.AddNum(-1);
+        mf.AddNum(-2);
+        Assert.Equal(-1.5, mf.FindMedian());
+        mf.AddNum(-3);
+        Assert.Equal(-2.0, mf.FindMedian());
+    }
+
+    [Fact]
+    public void MedianFinder_AddLargeNumbers_DoesNotThrow()
+    {
+        var mf = new FindMedianFromDataStream();
+        for (int i = 1; i <= 10000; i++)
+            mf.AddNum(i);
+        Assert.InRange(mf.FindMedian(), 4999.5, 5000.5);
     }
 }
+
+

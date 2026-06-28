@@ -8,22 +8,31 @@ public class ReverseBitsTests
     private readonly ReverseBits _solver = new();
 
     [Fact]
-    public void Solve_Example1_ReturnsExpectedResult()
+    public void Solve_Example1_43261596_Returns964176192()
     {
-        // TODO: 補上測試案例
-        // var result = _solver.Solve(...);
-        // Assert.NotNull(result);
+        uint n = 43261596;
+        uint expected = 964176192;
+        Assert.Equal(expected, _solver.Solve(n));
     }
 
     [Fact]
-    public void Solve_EmptyInput_HandlesGracefully()
+    public void Solve_Example2_4294967293_Returns3221225471()
     {
-        // TODO: 補上邊界測試
+        uint n = 4294967293;
+        uint expected = 3221225471;
+        Assert.Equal(expected, _solver.Solve(n));
     }
 
     [Fact]
-    public void Solve_LargeInput_DoesNotThrow()
+    public void Solve_Zero_ReturnsZero()
     {
-        // TODO: 補上壓力測試
+        Assert.Equal(0u, _solver.Solve(0));
+    }
+
+    [Fact]
+    public void Solve_One_ReturnsBigNumber()
+    {
+        uint result = _solver.Solve(1);
+        Assert.Equal(2147483648, result);
     }
 }

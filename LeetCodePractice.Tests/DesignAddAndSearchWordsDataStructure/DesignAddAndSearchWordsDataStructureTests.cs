@@ -5,25 +5,37 @@ namespace LeetCodePractice.Tests;
 
 public class DesignAddAndSearchWordsDataStructureTests
 {
-    private readonly DesignAddAndSearchWordsDataStructure _solver = new();
-
     [Fact]
-    public void Solve_Example1_ReturnsExpectedResult()
+    public void WordDictionary_Example1_SearchWorks()
     {
-        // TODO: 補上測試案例
-        // var result = _solver.Solve(...);
-        // Assert.NotNull(result);
+        var wd = new DesignAddAndSearchWordsDataStructure();
+        wd.AddWord("bad");
+        wd.AddWord("dad");
+        wd.AddWord("mad");
+        Assert.False(wd.Search("pad"));
+        Assert.True(wd.Search("bad"));
+        Assert.True(wd.Search(".ad"));
+        Assert.True(wd.Search("b.."));
     }
 
     [Fact]
-    public void Solve_EmptyInput_HandlesGracefully()
+    public void WordDictionary_DotOnly_MatchesAnyChar()
     {
-        // TODO: 補上邊界測試
+        var wd = new DesignAddAndSearchWordsDataStructure();
+        wd.AddWord("a");
+        Assert.True(wd.Search("."));
+        Assert.False(wd.Search(".."));
     }
 
     [Fact]
-    public void Solve_LargeInput_DoesNotThrow()
+    public void WordDictionary_EmptyWord_AddedThenSearched()
     {
-        // TODO: 補上壓力測試
+        var wd = new DesignAddAndSearchWordsDataStructure();
+        wd.AddWord("hello");
+        wd.AddWord("hello");
+        Assert.False(wd.Search("world"));
+        Assert.False(wd.Search("h.."));
     }
 }
+
+

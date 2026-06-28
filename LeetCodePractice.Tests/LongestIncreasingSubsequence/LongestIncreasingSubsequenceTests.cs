@@ -8,22 +8,36 @@ public class LongestIncreasingSubsequenceTests
     private readonly LongestIncreasingSubsequence _solver = new();
 
     [Fact]
-    public void Solve_Example1_ReturnsExpectedResult()
+    public void Solve_Example1_10_9_2_5_3_7_101_18_Returns4()
     {
-        // TODO: 補上測試案例
-        // var result = _solver.Solve(...);
-        // Assert.NotNull(result);
+        int[] nums = [10, 9, 2, 5, 3, 7, 101, 18];
+        Assert.Equal(4, _solver.Solve(nums));
     }
 
     [Fact]
-    public void Solve_EmptyInput_HandlesGracefully()
+    public void Solve_Example2_0_1_0_3_2_3_Returns4()
     {
-        // TODO: 補上邊界測試
+        int[] nums = [0, 1, 0, 3, 2, 3];
+        Assert.Equal(4, _solver.Solve(nums));
     }
 
     [Fact]
-    public void Solve_LargeInput_DoesNotThrow()
+    public void Solve_Example3_7_7_7_7_Returns1()
     {
-        // TODO: 補上壓力測試
+        int[] nums = [7, 7, 7, 7];
+        Assert.Equal(1, _solver.Solve(nums));
+    }
+
+    [Fact]
+    public void Solve_SingleElement_Returns1()
+    {
+        Assert.Equal(1, _solver.Solve([5]));
+    }
+
+    [Fact]
+    public void Solve_StrictlyDecreasing_Returns1()
+    {
+        int[] nums = [5, 4, 3, 2, 1];
+        Assert.Equal(1, _solver.Solve(nums));
     }
 }

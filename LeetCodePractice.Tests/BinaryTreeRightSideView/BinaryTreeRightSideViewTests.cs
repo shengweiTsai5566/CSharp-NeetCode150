@@ -8,22 +8,51 @@ public class BinaryTreeRightSideViewTests
     private readonly BinaryTreeRightSideView _solver = new();
 
     [Fact]
-    public void Solve_Example1_ReturnsExpectedResult()
+    public void Solve_Example1_Returns1_3_4()
     {
-        // TODO: 補上測試案例
-        // var result = _solver.Solve(...);
-        // Assert.NotNull(result);
+        var root = new TreeNode(1)
+        {
+            left = new TreeNode(2)
+            {
+                right = new TreeNode(5)
+            },
+            right = new TreeNode(3)
+            {
+                right = new TreeNode(4)
+            }
+        };
+        var expected = new List<int> { 1, 3, 4 };
+        Assert.Equal(expected, _solver.Solve(root));
     }
 
     [Fact]
-    public void Solve_EmptyInput_HandlesGracefully()
+    public void Solve_Example2_Returns1_3()
     {
-        // TODO: 補上邊界測試
+        var root = new TreeNode(1)
+        {
+            right = new TreeNode(3)
+        };
+        var expected = new List<int> { 1, 3 };
+        Assert.Equal(expected, _solver.Solve(root));
     }
 
     [Fact]
-    public void Solve_LargeInput_DoesNotThrow()
+    public void Solve_EmptyTree_ReturnsEmpty()
     {
-        // TODO: 補上壓力測試
+        Assert.Empty(_solver.Solve(null!));
+    }
+
+    [Fact]
+    public void Solve_LeftSkewed_OnlyRootVisible()
+    {
+        var root = new TreeNode(1)
+        {
+            left = new TreeNode(2)
+            {
+                left = new TreeNode(3)
+            }
+        };
+        var result = _solver.Solve(root);
+        Assert.Equal(new List<int> { 1, 2, 3 }, result);
     }
 }

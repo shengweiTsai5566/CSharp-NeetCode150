@@ -8,22 +8,30 @@ public class LongestIncreasingPathInAMatrixTests
     private readonly LongestIncreasingPathInAMatrix _solver = new();
 
     [Fact]
-    public void Solve_Example1_ReturnsExpectedResult()
+    public void Solve_Example1_Returns4()
     {
-        // TODO: 補上測試案例
-        // var result = _solver.Solve(...);
-        // Assert.NotNull(result);
+        int[][] matrix = [[9, 9, 4], [6, 6, 8], [2, 1, 1]];
+        Assert.Equal(4, _solver.Solve(matrix));
     }
 
     [Fact]
-    public void Solve_EmptyInput_HandlesGracefully()
+    public void Solve_Example2_Returns4()
     {
-        // TODO: 補上邊界測試
+        int[][] matrix = [[3, 4, 5], [3, 2, 6], [2, 2, 1]];
+        Assert.Equal(4, _solver.Solve(matrix));
     }
 
     [Fact]
-    public void Solve_LargeInput_DoesNotThrow()
+    public void Solve_Example3_SingleCell_Returns1()
     {
-        // TODO: 補上壓力測試
+        int[][] matrix = [[1]];
+        Assert.Equal(1, _solver.Solve(matrix));
+    }
+
+    [Fact]
+    public void Solve_AllDecreasing_Returns1()
+    {
+        int[][] matrix = [[5, 4], [3, 2]];
+        Assert.Equal(2, _solver.Solve(matrix));
     }
 }

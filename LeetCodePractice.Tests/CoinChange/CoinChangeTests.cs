@@ -8,22 +8,37 @@ public class CoinChangeTests
     private readonly CoinChange _solver = new();
 
     [Fact]
-    public void Solve_Example1_ReturnsExpectedResult()
+    public void Solve_Example1_Coins1_2_5_Amount11_Returns3()
     {
-        // TODO: 補上測試案例
-        // var result = _solver.Solve(...);
-        // Assert.NotNull(result);
+        int[] coins = [1, 2, 5];
+        Assert.Equal(3, _solver.Solve(coins, 11));
     }
 
     [Fact]
-    public void Solve_EmptyInput_HandlesGracefully()
+    public void Solve_Example2_Coins2_Amount3_ReturnsMinus1()
     {
-        // TODO: 補上邊界測試
+        int[] coins = [2];
+        Assert.Equal(-1, _solver.Solve(coins, 3));
     }
 
     [Fact]
-    public void Solve_LargeInput_DoesNotThrow()
+    public void Solve_Example3_Amount0_Returns0()
     {
-        // TODO: 補上壓力測試
+        int[] coins = [1];
+        Assert.Equal(0, _solver.Solve(coins, 0));
+    }
+
+    [Fact]
+    public void Solve_Coins1_Amount10000_DoesNotThrow()
+    {
+        int[] coins = [1];
+        Assert.Equal(10000, _solver.Solve(coins, 10000));
+    }
+
+    [Fact]
+    public void Solve_Coins1_5_10_Amount27_Returns4()
+    {
+        int[] coins = [1, 5, 10];
+        Assert.Equal(4, _solver.Solve(coins, 27)); // 10+10+5+1+1
     }
 }

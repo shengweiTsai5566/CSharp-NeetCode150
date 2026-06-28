@@ -8,22 +8,44 @@ public class LongestSubstringWithoutRepeatingCharactersTests
     private readonly LongestSubstringWithoutRepeatingCharacters _solver = new();
 
     [Fact]
-    public void Solve_Example1_ReturnsExpectedResult()
+    public void Solve_Example1_abcabcbb_Returns3()
     {
-        // TODO: 補上測試案例
-        // var result = _solver.Solve(...);
-        // Assert.NotNull(result);
+        Assert.Equal(3, _solver.Solve("abcabcbb"));
     }
 
     [Fact]
-    public void Solve_EmptyInput_HandlesGracefully()
+    public void Solve_Example2_bbbbb_Returns1()
     {
-        // TODO: 補上邊界測試
+        Assert.Equal(1, _solver.Solve("bbbbb"));
     }
 
     [Fact]
-    public void Solve_LargeInput_DoesNotThrow()
+    public void Solve_Example3_pwwkew_Returns3()
     {
-        // TODO: 補上壓力測試
+        Assert.Equal(3, _solver.Solve("pwwkew"));
+    }
+
+    [Fact]
+    public void Solve_EmptyString_Returns0()
+    {
+        Assert.Equal(0, _solver.Solve(""));
+    }
+
+    [Fact]
+    public void Solve_SingleChar_Returns1()
+    {
+        Assert.Equal(1, _solver.Solve("a"));
+    }
+
+    [Fact]
+    public void Solve_AllUnique_ReturnsLength()
+    {
+        Assert.Equal(5, _solver.Solve("abcde"));
+    }
+
+    [Fact]
+    public void Solve_Space_Returns1()
+    {
+        Assert.Equal(1, _solver.Solve(" "));
     }
 }

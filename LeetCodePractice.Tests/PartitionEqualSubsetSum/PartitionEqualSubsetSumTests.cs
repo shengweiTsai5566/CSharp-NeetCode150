@@ -8,22 +8,34 @@ public class PartitionEqualSubsetSumTests
     private readonly PartitionEqualSubsetSum _solver = new();
 
     [Fact]
-    public void Solve_Example1_ReturnsExpectedResult()
+    public void Solve_Example1_1_5_11_5_ReturnsTrue()
     {
-        // TODO: 補上測試案例
-        // var result = _solver.Solve(...);
-        // Assert.NotNull(result);
+        int[] nums = [1, 5, 11, 5];
+        Assert.True(_solver.Solve(nums));
     }
 
     [Fact]
-    public void Solve_EmptyInput_HandlesGracefully()
+    public void Solve_Example2_1_2_3_5_ReturnsFalse()
     {
-        // TODO: 補上邊界測試
+        int[] nums = [1, 2, 3, 5];
+        Assert.False(_solver.Solve(nums));
     }
 
     [Fact]
-    public void Solve_LargeInput_DoesNotThrow()
+    public void Solve_SingleElement_ReturnsFalse()
     {
-        // TODO: 補上壓力測試
+        Assert.False(_solver.Solve([1]));
+    }
+
+    [Fact]
+    public void Solve_TwoEqual_ReturnsTrue()
+    {
+        Assert.True(_solver.Solve([1, 1]));
+    }
+
+    [Fact]
+    public void Solve_Empty_ReturnsTrue()
+    {
+        Assert.True(_solver.Solve([]));
     }
 }

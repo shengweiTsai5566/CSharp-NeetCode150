@@ -8,22 +8,38 @@ public class ReverseIntegerTests
     private readonly ReverseInteger _solver = new();
 
     [Fact]
-    public void Solve_Example1_ReturnsExpectedResult()
+    public void Solve_Example1_123_Returns321()
     {
-        // TODO: 補上測試案例
-        // var result = _solver.Solve(...);
-        // Assert.NotNull(result);
+        Assert.Equal(321, _solver.Solve(123));
     }
 
     [Fact]
-    public void Solve_EmptyInput_HandlesGracefully()
+    public void Solve_Example2_Minus123_ReturnsMinus321()
     {
-        // TODO: 補上邊界測試
+        Assert.Equal(-321, _solver.Solve(-123));
     }
 
     [Fact]
-    public void Solve_LargeInput_DoesNotThrow()
+    public void Solve_Example3_120_Returns21()
     {
-        // TODO: 補上壓力測試
+        Assert.Equal(21, _solver.Solve(120));
+    }
+
+    [Fact]
+    public void Solve_Overflow_Returns0()
+    {
+        Assert.Equal(0, _solver.Solve(1534236469));
+    }
+
+    [Fact]
+    public void Solve_Zero_Returns0()
+    {
+        Assert.Equal(0, _solver.Solve(0));
+    }
+
+    [Fact]
+    public void Solve_NegativeOverflow_Returns0()
+    {
+        Assert.Equal(0, _solver.Solve(-2147483648));
     }
 }

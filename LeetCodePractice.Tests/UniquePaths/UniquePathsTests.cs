@@ -8,22 +8,32 @@ public class UniquePathsTests
     private readonly UniquePaths _solver = new();
 
     [Fact]
-    public void Solve_Example1_ReturnsExpectedResult()
+    public void Solve_Example1_3x7_Returns28()
     {
-        // TODO: 補上測試案例
-        // var result = _solver.Solve(...);
-        // Assert.NotNull(result);
+        Assert.Equal(28, _solver.Solve(3, 7));
     }
 
     [Fact]
-    public void Solve_EmptyInput_HandlesGracefully()
+    public void Solve_Example2_3x2_Returns3()
     {
-        // TODO: 補上邊界測試
+        Assert.Equal(3, _solver.Solve(3, 2));
     }
 
     [Fact]
-    public void Solve_LargeInput_DoesNotThrow()
+    public void Solve_1x1_Returns1()
     {
-        // TODO: 補上壓力測試
+        Assert.Equal(1, _solver.Solve(1, 1));
+    }
+
+    [Fact]
+    public void Solve_1xN_Returns1()
+    {
+        Assert.Equal(1, _solver.Solve(1, 10));
+    }
+
+    [Fact]
+    public void Solve_Mx1_Returns1()
+    {
+        Assert.Equal(1, _solver.Solve(10, 1));
     }
 }

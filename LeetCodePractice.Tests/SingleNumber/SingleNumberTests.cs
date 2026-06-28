@@ -8,22 +8,34 @@ public class SingleNumberTests
     private readonly SingleNumber _solver = new();
 
     [Fact]
-    public void Solve_Example1_ReturnsExpectedResult()
+    public void Solve_Example1_2_2_1_Returns1()
     {
-        // TODO: 補上測試案例
-        // var result = _solver.Solve(...);
-        // Assert.NotNull(result);
+        int[] nums = [2, 2, 1];
+        Assert.Equal(1, _solver.Solve(nums));
     }
 
     [Fact]
-    public void Solve_EmptyInput_HandlesGracefully()
+    public void Solve_Example2_4_1_2_1_2_Returns4()
     {
-        // TODO: 補上邊界測試
+        int[] nums = [4, 1, 2, 1, 2];
+        Assert.Equal(4, _solver.Solve(nums));
     }
 
     [Fact]
-    public void Solve_LargeInput_DoesNotThrow()
+    public void Solve_Example3_1_Returns1()
     {
-        // TODO: 補上壓力測試
+        Assert.Equal(1, _solver.Solve([1]));
+    }
+
+    [Fact]
+    public void Solve_TwoSame_Returns0()
+    {
+        Assert.Equal(0, _solver.Solve([5, 5]));
+    }
+
+    [Fact]
+    public void Solve_ThreeWithSingle_ReturnsSingle()
+    {
+        Assert.Equal(3, _solver.Solve([1, 2, 1, 2, 3]));
     }
 }

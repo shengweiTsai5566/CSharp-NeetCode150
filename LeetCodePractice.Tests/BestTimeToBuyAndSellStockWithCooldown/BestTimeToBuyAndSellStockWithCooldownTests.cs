@@ -8,22 +8,33 @@ public class BestTimeToBuyAndSellStockWithCooldownTests
     private readonly BestTimeToBuyAndSellStockWithCooldown _solver = new();
 
     [Fact]
-    public void Solve_Example1_ReturnsExpectedResult()
+    public void Solve_Example1_1_2_3_0_2_Returns3()
     {
-        // TODO: 補上測試案例
-        // var result = _solver.Solve(...);
-        // Assert.NotNull(result);
+        int[] prices = [1, 2, 3, 0, 2];
+        Assert.Equal(3, _solver.Solve(prices));
     }
 
     [Fact]
-    public void Solve_EmptyInput_HandlesGracefully()
+    public void Solve_Example2_1_Returns0()
     {
-        // TODO: 補上邊界測試
+        Assert.Equal(0, _solver.Solve([1]));
     }
 
     [Fact]
-    public void Solve_LargeInput_DoesNotThrow()
+    public void Solve_StrictlyIncreasing_ReturnsMaxProfit()
     {
-        // TODO: 補上壓力測試
+        Assert.Equal(4, _solver.Solve([1, 2, 3, 5]));
+    }
+
+    [Fact]
+    public void Solve_StrictlyDecreasing_Returns0()
+    {
+        Assert.Equal(0, _solver.Solve([5, 4, 3, 2, 1]));
+    }
+
+    [Fact]
+    public void Solve_EmptyArray_Returns0()
+    {
+        Assert.Equal(0, _solver.Solve([]));
     }
 }

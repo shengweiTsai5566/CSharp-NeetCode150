@@ -8,22 +8,49 @@ public class BinaryTreeLevelOrderTraversalTests
     private readonly BinaryTreeLevelOrderTraversal _solver = new();
 
     [Fact]
-    public void Solve_Example1_ReturnsExpectedResult()
+    public void Solve_Example1_ReturnsLevelOrder()
     {
-        // TODO: 補上測試案例
-        // var result = _solver.Solve(...);
-        // Assert.NotNull(result);
+        var root = new TreeNode(3)
+        {
+            left = new TreeNode(9),
+            right = new TreeNode(20)
+            {
+                left = new TreeNode(15),
+                right = new TreeNode(7)
+            }
+        };
+        var expected = new List<IList<int>> { new List<int> { 3 }, new List<int> { 9, 20 }, new List<int> { 15, 7 } };
+        var result = _solver.Solve(root);
+        Assert.Equal(expected, result);
     }
 
     [Fact]
-    public void Solve_EmptyInput_HandlesGracefully()
+    public void Solve_EmptyTree_ReturnsEmpty()
     {
-        // TODO: 補上邊界測試
+        var result = _solver.Solve(null!);
+        Assert.Empty(result);
     }
 
     [Fact]
-    public void Solve_LargeInput_DoesNotThrow()
+    public void Solve_SingleNode_ReturnsSingleList()
     {
-        // TODO: 補上壓力測試
+        var root = new TreeNode(1);
+        var result = _solver.Solve(root);
+        Assert.Single(result);
+        Assert.Equal(1, result[0][0]);
+    }
+
+    [Fact]
+    public void Solve_LeftSkewed_ReturnsLevels()
+    {
+        var root = new TreeNode(1)
+        {
+            left = new TreeNode(2)
+            {
+                left = new TreeNode(3)
+            }
+        };
+        var result = _solver.Solve(root);
+        Assert.Equal(3, result.Count);
     }
 }

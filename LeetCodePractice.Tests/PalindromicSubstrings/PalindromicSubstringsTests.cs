@@ -8,22 +8,32 @@ public class PalindromicSubstringsTests
     private readonly PalindromicSubstrings _solver = new();
 
     [Fact]
-    public void Solve_Example1_ReturnsExpectedResult()
+    public void Solve_Example1_abc_Returns3()
     {
-        // TODO: 補上測試案例
-        // var result = _solver.Solve(...);
-        // Assert.NotNull(result);
+        Assert.Equal(3, _solver.Solve("abc"));
     }
 
     [Fact]
-    public void Solve_EmptyInput_HandlesGracefully()
+    public void Solve_Example2_aaa_Returns6()
     {
-        // TODO: 補上邊界測試
+        Assert.Equal(6, _solver.Solve("aaa"));
     }
 
     [Fact]
-    public void Solve_LargeInput_DoesNotThrow()
+    public void Solve_SingleChar_Returns1()
     {
-        // TODO: 補上壓力測試
+        Assert.Equal(1, _solver.Solve("a"));
+    }
+
+    [Fact]
+    public void Solve_Empty_Returns0()
+    {
+        Assert.Equal(0, _solver.Solve(""));
+    }
+
+    [Fact]
+    public void Solve_TwoSame_Returns3()
+    {
+        Assert.Equal(3, _solver.Solve("aa"));
     }
 }

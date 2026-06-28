@@ -8,22 +8,38 @@ public class SameTreeTests
     private readonly SameTree _solver = new();
 
     [Fact]
-    public void Solve_Example1_ReturnsExpectedResult()
+    public void Solve_Example1_1_2_3_And_1_2_3_ReturnsTrue()
     {
-        // TODO: 補上測試案例
-        // var result = _solver.Solve(...);
-        // Assert.NotNull(result);
+        var p = new TreeNode(1) { left = new TreeNode(2), right = new TreeNode(3) };
+        var q = new TreeNode(1) { left = new TreeNode(2), right = new TreeNode(3) };
+        Assert.True(_solver.Solve(p, q));
     }
 
     [Fact]
-    public void Solve_EmptyInput_HandlesGracefully()
+    public void Solve_Example2_1_2_And_1_Null_2_ReturnsFalse()
     {
-        // TODO: 補上邊界測試
+        var p = new TreeNode(1) { left = new TreeNode(2) };
+        var q = new TreeNode(1) { right = new TreeNode(2) };
+        Assert.False(_solver.Solve(p, q));
     }
 
     [Fact]
-    public void Solve_LargeInput_DoesNotThrow()
+    public void Solve_Example3_1_2_1_And_1_1_2_ReturnsFalse()
     {
-        // TODO: 補上壓力測試
+        var p = new TreeNode(1) { left = new TreeNode(2), right = new TreeNode(1) };
+        var q = new TreeNode(1) { left = new TreeNode(1), right = new TreeNode(2) };
+        Assert.False(_solver.Solve(p, q));
+    }
+
+    [Fact]
+    public void Solve_BothNull_ReturnsTrue()
+    {
+        Assert.True(_solver.Solve(null!, null!));
+    }
+
+    [Fact]
+    public void Solve_OneNull_ReturnsFalse()
+    {
+        Assert.False(_solver.Solve(new TreeNode(1), null!));
     }
 }

@@ -8,22 +8,27 @@ public class SlidingWindowMaximumTests
     private readonly SlidingWindowMaximum _solver = new();
 
     [Fact]
-    public void Solve_Example1_ReturnsExpectedResult()
+    public void Solve_Example1_Returns3_3_5_5_6_7()
     {
-        // TODO: 補上測試案例
-        // var result = _solver.Solve(...);
-        // Assert.NotNull(result);
+        int[] nums = [1, 3, -1, -3, 5, 3, 6, 7];
+        Assert.Equal(new int[] { 3, 3, 5, 5, 6, 7 }, _solver.Solve(nums, 3));
     }
 
     [Fact]
-    public void Solve_EmptyInput_HandlesGracefully()
+    public void Solve_Example2_1_Returns1()
     {
-        // TODO: 補上邊界測試
+        Assert.Equal(new int[] { 1 }, _solver.Solve([1], 1));
     }
 
     [Fact]
-    public void Solve_LargeInput_DoesNotThrow()
+    public void Solve_KEqualsLength_ReturnsMax()
     {
-        // TODO: 補上壓力測試
+        Assert.Equal(new int[] { 5 }, _solver.Solve([1, 3, 5], 3));
+    }
+
+    [Fact]
+    public void Solve_AllSame_ReturnsSame()
+    {
+        Assert.Equal(new int[] { 2, 2, 2 }, _solver.Solve([2, 2, 2, 2, 2], 3));
     }
 }

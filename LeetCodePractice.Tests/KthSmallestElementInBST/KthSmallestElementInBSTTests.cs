@@ -8,22 +8,47 @@ public class KthSmallestElementInBSTTests
     private readonly KthSmallestElementInBST _solver = new();
 
     [Fact]
-    public void Solve_Example1_ReturnsExpectedResult()
+    public void Solve_Example1_3_1_4_Null_2_K1_Returns1()
     {
-        // TODO: 補上測試案例
-        // var result = _solver.Solve(...);
-        // Assert.NotNull(result);
+        var root = new TreeNode(3)
+        {
+            left = new TreeNode(1) { right = new TreeNode(2) },
+            right = new TreeNode(4)
+        };
+        Assert.Equal(1, _solver.Solve(root, 1));
     }
 
     [Fact]
-    public void Solve_EmptyInput_HandlesGracefully()
+    public void Solve_Example2_5_3_6_2_4_N_N_1_K3_Returns3()
     {
-        // TODO: 補上邊界測試
+        var root = new TreeNode(5)
+        {
+            left = new TreeNode(3)
+            {
+                left = new TreeNode(2) { left = new TreeNode(1) },
+                right = new TreeNode(4)
+            },
+            right = new TreeNode(6)
+        };
+        Assert.Equal(3, _solver.Solve(root, 3));
     }
 
     [Fact]
-    public void Solve_LargeInput_DoesNotThrow()
+    public void Solve_SingleNode_ReturnsItsValue()
     {
-        // TODO: 補上壓力測試
+        Assert.Equal(1, _solver.Solve(new TreeNode(1), 1));
+    }
+
+    [Fact]
+    public void Solve_LeftSkewed_Kth_ReturnsCorrect()
+    {
+        var root = new TreeNode(3)
+        {
+            left = new TreeNode(2)
+            {
+                left = new TreeNode(1)
+            }
+        };
+        Assert.Equal(2, _solver.Solve(root, 2));
     }
 }

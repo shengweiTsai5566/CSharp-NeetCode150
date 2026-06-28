@@ -8,22 +8,30 @@ public class NetworkDelayTimeTests
     private readonly NetworkDelayTime _solver = new();
 
     [Fact]
-    public void Solve_Example1_ReturnsExpectedResult()
+    public void Solve_Example1_Returns2()
     {
-        // TODO: 補上測試案例
-        // var result = _solver.Solve(...);
-        // Assert.NotNull(result);
+        int[][] times = [[2, 1, 1], [2, 3, 1], [3, 4, 1]];
+        Assert.Equal(2, _solver.Solve(times, 4, 2));
     }
 
     [Fact]
-    public void Solve_EmptyInput_HandlesGracefully()
+    public void Solve_Example2_Returns1()
     {
-        // TODO: 補上邊界測試
+        int[][] times = [[1, 2, 1]];
+        Assert.Equal(1, _solver.Solve(times, 2, 1));
     }
 
     [Fact]
-    public void Solve_LargeInput_DoesNotThrow()
+    public void Solve_Example3_ReturnsMinus1()
     {
-        // TODO: 補上壓力測試
+        int[][] times = [[1, 2, 1]];
+        Assert.Equal(-1, _solver.Solve(times, 2, 2));
+    }
+
+    [Fact]
+    public void Solve_Disconnected_ReturnsMinus1()
+    {
+        int[][] times = [[1, 2, 1], [3, 4, 2]];
+        Assert.Equal(-1, _solver.Solve(times, 4, 1));
     }
 }

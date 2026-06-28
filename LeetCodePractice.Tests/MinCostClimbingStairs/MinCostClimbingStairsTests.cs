@@ -8,22 +8,28 @@ public class MinCostClimbingStairsTests
     private readonly MinCostClimbingStairs _solver = new();
 
     [Fact]
-    public void Solve_Example1_ReturnsExpectedResult()
+    public void Solve_Example1_10_15_20_Returns15()
     {
-        // TODO: 補上測試案例
-        // var result = _solver.Solve(...);
-        // Assert.NotNull(result);
+        int[] cost = [10, 15, 20];
+        Assert.Equal(15, _solver.Solve(cost));
     }
 
     [Fact]
-    public void Solve_EmptyInput_HandlesGracefully()
+    public void Solve_Example2_1_100_1_1_1_100_1_1_100_1_Returns6()
     {
-        // TODO: 補上邊界測試
+        int[] cost = [1, 100, 1, 1, 1, 100, 1, 1, 100, 1];
+        Assert.Equal(6, _solver.Solve(cost));
     }
 
     [Fact]
-    public void Solve_LargeInput_DoesNotThrow()
+    public void Solve_TwoElements_ReturnsMin()
     {
-        // TODO: 補上壓力測試
+        Assert.Equal(5, _solver.Solve([5, 10]));
+    }
+
+    [Fact]
+    public void Solve_ThreeElements_ReturnsMin()
+    {
+        Assert.Equal(2, _solver.Solve([1, 2, 2]));
     }
 }

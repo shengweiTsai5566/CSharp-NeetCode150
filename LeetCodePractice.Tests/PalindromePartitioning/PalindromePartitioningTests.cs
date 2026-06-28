@@ -8,22 +8,34 @@ public class PalindromePartitioningTests
     private readonly PalindromePartitioning _solver = new();
 
     [Fact]
-    public void Solve_Example1_ReturnsExpectedResult()
+    public void Solve_Example1_AAB_Returns2Partitions()
     {
-        // TODO: 補上測試案例
-        // var result = _solver.Solve(...);
-        // Assert.NotNull(result);
+        var result = _solver.Solve("aab");
+        Assert.Equal(2, result.Count);
+        Assert.Contains(result, p => p.SequenceEqual(new List<string> { "a", "a", "b" }));
+        Assert.Contains(result, p => p.SequenceEqual(new List<string> { "aa", "b" }));
     }
 
     [Fact]
-    public void Solve_EmptyInput_HandlesGracefully()
+    public void Solve_Example2_A_Returns1Partition()
     {
-        // TODO: 補上邊界測試
+        var result = _solver.Solve("a");
+        Assert.Single(result);
+        Assert.Equal(new List<string> { "a" }, result[0]);
     }
 
     [Fact]
-    public void Solve_LargeInput_DoesNotThrow()
+    public void Solve_Empty_ReturnsEmpty()
     {
-        // TODO: 補上壓力測試
+        var result = _solver.Solve("");
+        Assert.Single(result);
+        Assert.Empty(result[0]);
+    }
+
+    [Fact]
+    public void Solve_AllPalindrome_ReturnsAll()
+    {
+        var result = _solver.Solve("aaa");
+        Assert.Equal(4, result.Count);
     }
 }

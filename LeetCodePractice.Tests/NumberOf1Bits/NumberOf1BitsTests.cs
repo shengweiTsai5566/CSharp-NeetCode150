@@ -8,22 +8,32 @@ public class NumberOf1BitsTests
     private readonly NumberOf1Bits _solver = new();
 
     [Fact]
-    public void Solve_Example1_ReturnsExpectedResult()
+    public void Solve_Example1_11_Returns3()
     {
-        // TODO: 補上測試案例
-        // var result = _solver.Solve(...);
-        // Assert.NotNull(result);
+        Assert.Equal(3, _solver.Solve(11));
     }
 
     [Fact]
-    public void Solve_EmptyInput_HandlesGracefully()
+    public void Solve_Example2_128_Returns1()
     {
-        // TODO: 補上邊界測試
+        Assert.Equal(1, _solver.Solve(128));
     }
 
     [Fact]
-    public void Solve_LargeInput_DoesNotThrow()
+    public void Solve_Negative_Minus3_Returns31()
     {
-        // TODO: 補上壓力測試
+        Assert.Equal(31, _solver.Solve(-3));
+    }
+
+    [Fact]
+    public void Solve_Zero_Returns0()
+    {
+        Assert.Equal(0, _solver.Solve(0));
+    }
+
+    [Fact]
+    public void Solve_Minus1_Returns32()
+    {
+        Assert.Equal(32, _solver.Solve(-1));
     }
 }

@@ -8,22 +8,33 @@ public class MergeTripletsToFormTargetTripletTests
     private readonly MergeTripletsToFormTargetTriplet _solver = new();
 
     [Fact]
-    public void Solve_Example1_ReturnsExpectedResult()
+    public void Solve_Example1_ReturnsTrue()
     {
-        // TODO: 補上測試案例
-        // var result = _solver.Solve(...);
-        // Assert.NotNull(result);
+        int[][] triplets = [[2, 5, 3], [1, 8, 4], [1, 7, 5]];
+        int[] target = [2, 7, 5];
+        Assert.True(_solver.Solve(triplets, target));
     }
 
     [Fact]
-    public void Solve_EmptyInput_HandlesGracefully()
+    public void Solve_Example2_ReturnsFalse()
     {
-        // TODO: 補上邊界測試
+        int[][] triplets = [[3, 4, 5], [4, 5, 6]];
+        int[] target = [3, 2, 5];
+        Assert.False(_solver.Solve(triplets, target));
     }
 
     [Fact]
-    public void Solve_LargeInput_DoesNotThrow()
+    public void Solve_Example3_ReturnsTrue()
     {
-        // TODO: 補上壓力測試
+        int[][] triplets = [[2, 5, 3], [2, 3, 4], [1, 2, 5], [5, 2, 3]];
+        int[] target = [5, 5, 5];
+        Assert.True(_solver.Solve(triplets, target));
+    }
+
+    [Fact]
+    public void Solve_SingleTripletMatch_ReturnsTrue()
+    {
+        int[][] triplets = [[1, 2, 3]];
+        Assert.True(_solver.Solve(triplets, [1, 2, 3]));
     }
 }

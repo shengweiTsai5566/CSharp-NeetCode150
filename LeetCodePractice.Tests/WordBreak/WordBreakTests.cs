@@ -8,22 +8,32 @@ public class WordBreakTests
     private readonly WordBreak _solver = new();
 
     [Fact]
-    public void Solve_Example1_ReturnsExpectedResult()
+    public void Solve_Example1_ReturnsTrue()
     {
-        // TODO: 補上測試案例
-        // var result = _solver.Solve(...);
-        // Assert.NotNull(result);
+        Assert.True(_solver.Solve("leetcode", new List<string> { "leet", "code" }));
     }
 
     [Fact]
-    public void Solve_EmptyInput_HandlesGracefully()
+    public void Solve_Example2_ReturnsTrue()
     {
-        // TODO: 補上邊界測試
+        Assert.True(_solver.Solve("applepenapple", new List<string> { "apple", "pen" }));
     }
 
     [Fact]
-    public void Solve_LargeInput_DoesNotThrow()
+    public void Solve_Example3_ReturnsFalse()
     {
-        // TODO: 補上壓力測試
+        Assert.False(_solver.Solve("catsandog", new List<string> { "cats", "dog", "sand", "and", "cat" }));
+    }
+
+    [Fact]
+    public void Solve_EmptyString_ReturnsTrue()
+    {
+        Assert.True(_solver.Solve("", new List<string> { "a", "b" }));
+    }
+
+    [Fact]
+    public void Solve_EmptyDict_ReturnsFalse()
+    {
+        Assert.False(_solver.Solve("abc", new List<string>()));
     }
 }

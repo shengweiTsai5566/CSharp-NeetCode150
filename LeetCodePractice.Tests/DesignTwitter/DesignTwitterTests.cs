@@ -5,25 +5,50 @@ namespace LeetCodePractice.Tests;
 
 public class DesignTwitterTests
 {
-    private readonly DesignTwitter _solver = new();
-
     [Fact]
-    public void Solve_Example1_ReturnsExpectedResult()
+    public void Twitter_Example1_Works()
     {
-        // TODO: 補上測試案例
-        // var result = _solver.Solve(...);
-        // Assert.NotNull(result);
+        var twitter = new DesignTwitter();
+        twitter.PostTweet(1, 5);
+        var feed = twitter.GetNewsFeed(1);
+        Assert.Equal(new List<int> { 5 }, feed);
+
+        twitter.Follow(1, 2);
+        twitter.PostTweet(2, 6);
+        feed = twitter.GetNewsFeed(1);
+        Assert.Equal(new List<int> { 6, 5 }, feed);
+
+        twitter.Unfollow(1, 2);
+        feed = twitter.GetNewsFeed(1);
+        Assert.Equal(new List<int> { 5 }, feed);
     }
 
     [Fact]
-    public void Solve_EmptyInput_HandlesGracefully()
+    public void Twitter_MultipleUsers_FeedIsChronological()
     {
-        // TODO: 補上邊界測試
+        var twitter = new DesignTwitter();
+        twitter.PostTweet(1, 1);
+        twitter.PostTweet(2, 2);
+        twitter.PostTweet(1, 3);
+        twitter.Follow(1, 2);
+        var feed = twitter.GetNewsFeed(1);
+        Assert.Equal(3, feed.Count);
+        Assert.Equal(3, feed[0]); // newest first
+        Assert.Equal(2, feed[1]);
+        Assert.Equal(1, feed[2]);
     }
 
     [Fact]
-    public void Solve_LargeInput_DoesNotThrow()
+    public void Twitter_Unfollow_RemovesFromFeed()
     {
-        // TODO: 補上壓力測試
+        var twitter = new DesignTwitter();
+        twitter.PostTweet(1, 10);
+        twitter.Follow(2, 1);
+        twitter.PostTweet(1, 20);
+        twitter.Unfollow(2, 1);
+        var feed = twitter.GetNewsFeed(2);
+        Assert.Empty(feed);
     }
 }
+
+

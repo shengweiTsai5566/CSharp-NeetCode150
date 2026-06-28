@@ -8,22 +8,32 @@ public class JumpGameTests
     private readonly JumpGame _solver = new();
 
     [Fact]
-    public void Solve_Example1_ReturnsExpectedResult()
+    public void Solve_Example1_2_3_1_1_4_ReturnsTrue()
     {
-        // TODO: 補上測試案例
-        // var result = _solver.Solve(...);
-        // Assert.NotNull(result);
+        Assert.True(_solver.Solve([2, 3, 1, 1, 4]));
     }
 
     [Fact]
-    public void Solve_EmptyInput_HandlesGracefully()
+    public void Solve_Example2_3_2_1_0_4_ReturnsFalse()
     {
-        // TODO: 補上邊界測試
+        Assert.False(_solver.Solve([3, 2, 1, 0, 4]));
     }
 
     [Fact]
-    public void Solve_LargeInput_DoesNotThrow()
+    public void Solve_SingleElement_ReturnsTrue()
     {
-        // TODO: 補上壓力測試
+        Assert.True(_solver.Solve([0]));
+    }
+
+    [Fact]
+    public void Solve_ZeroInMiddle_ReturnsFalse()
+    {
+        Assert.False(_solver.Solve([2, 0, 0, 1]));
+    }
+
+    [Fact]
+    public void Solve_LargeJumps_ReturnsTrue()
+    {
+        Assert.True(_solver.Solve([5, 0, 0, 0, 0, 0]));
     }
 }

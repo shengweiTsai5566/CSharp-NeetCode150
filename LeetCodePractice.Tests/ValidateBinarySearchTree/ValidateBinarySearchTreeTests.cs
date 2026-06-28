@@ -8,22 +8,42 @@ public class ValidateBinarySearchTreeTests
     private readonly ValidateBinarySearchTree _solver = new();
 
     [Fact]
-    public void Solve_Example1_ReturnsExpectedResult()
+    public void Solve_Example1_Valid_ReturnsTrue()
     {
-        // TODO: 補上測試案例
-        // var result = _solver.Solve(...);
-        // Assert.NotNull(result);
+        var root = new TreeNode(2) { left = new TreeNode(1), right = new TreeNode(3) };
+        Assert.True(_solver.Solve(root));
     }
 
     [Fact]
-    public void Solve_EmptyInput_HandlesGracefully()
+    public void Solve_Example2_Invalid_ReturnsFalse()
     {
-        // TODO: 補上邊界測試
+        var root = new TreeNode(5) { left = new TreeNode(1), right = new TreeNode(4) { left = new TreeNode(3), right = new TreeNode(6) } };
+        Assert.False(_solver.Solve(root));
     }
 
     [Fact]
-    public void Solve_LargeInput_DoesNotThrow()
+    public void Solve_LeftSkewedValid_ReturnsTrue()
     {
-        // TODO: 補上壓力測試
+        var root = new TreeNode(3) { left = new TreeNode(2) { left = new TreeNode(1) } };
+        Assert.True(_solver.Solve(root));
+    }
+
+    [Fact]
+    public void Solve_SingleNode_ReturnsTrue()
+    {
+        Assert.True(_solver.Solve(new TreeNode(1)));
+    }
+
+    [Fact]
+    public void Solve_Null_ReturnsTrue()
+    {
+        Assert.True(_solver.Solve(null!));
+    }
+
+    [Fact]
+    public void Solve_EqualValue_ReturnsFalse()
+    {
+        var root = new TreeNode(1) { left = new TreeNode(1) };
+        Assert.False(_solver.Solve(root));
     }
 }

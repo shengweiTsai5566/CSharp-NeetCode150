@@ -8,22 +8,29 @@ public class NonOverlappingIntervalsTests
     private readonly NonOverlappingIntervals _solver = new();
 
     [Fact]
-    public void Solve_Example1_ReturnsExpectedResult()
+    public void Solve_Example1_Returns1()
     {
-        // TODO: 補上測試案例
-        // var result = _solver.Solve(...);
-        // Assert.NotNull(result);
+        int[][] intervals = [[1, 2], [2, 3], [3, 4], [1, 3]];
+        Assert.Equal(1, _solver.Solve(intervals));
     }
 
     [Fact]
-    public void Solve_EmptyInput_HandlesGracefully()
+    public void Solve_Example2_Returns2()
     {
-        // TODO: 補上邊界測試
+        int[][] intervals = [[1, 2], [1, 2], [1, 2]];
+        Assert.Equal(2, _solver.Solve(intervals));
     }
 
     [Fact]
-    public void Solve_LargeInput_DoesNotThrow()
+    public void Solve_Example3_Returns0()
     {
-        // TODO: 補上壓力測試
+        int[][] intervals = [[1, 2], [2, 3]];
+        Assert.Equal(0, _solver.Solve(intervals));
+    }
+
+    [Fact]
+    public void Solve_Empty_Returns0()
+    {
+        Assert.Equal(0, _solver.Solve([]));
     }
 }

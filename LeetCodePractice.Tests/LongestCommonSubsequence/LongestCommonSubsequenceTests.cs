@@ -8,22 +8,32 @@ public class LongestCommonSubsequenceTests
     private readonly LongestCommonSubsequence _solver = new();
 
     [Fact]
-    public void Solve_Example1_ReturnsExpectedResult()
+    public void Solve_Example1_abcde_ace_Returns3()
     {
-        // TODO: 補上測試案例
-        // var result = _solver.Solve(...);
-        // Assert.NotNull(result);
+        Assert.Equal(3, _solver.Solve("abcde", "ace"));
     }
 
     [Fact]
-    public void Solve_EmptyInput_HandlesGracefully()
+    public void Solve_Example2_abc_abc_Returns3()
     {
-        // TODO: 補上邊界測試
+        Assert.Equal(3, _solver.Solve("abc", "abc"));
     }
 
     [Fact]
-    public void Solve_LargeInput_DoesNotThrow()
+    public void Solve_Example3_abc_def_Returns0()
     {
-        // TODO: 補上壓力測試
+        Assert.Equal(0, _solver.Solve("abc", "def"));
+    }
+
+    [Fact]
+    public void Solve_OneEmpty_Returns0()
+    {
+        Assert.Equal(0, _solver.Solve("abc", ""));
+    }
+
+    [Fact]
+    public void Solve_Reversed_Returns1()
+    {
+        Assert.Equal(1, _solver.Solve("abc", "cba"));
     }
 }

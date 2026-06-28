@@ -8,22 +8,38 @@ public class ValidParenthesisStringTests
     private readonly ValidParenthesisString _solver = new();
 
     [Fact]
-    public void Solve_Example1_ReturnsExpectedResult()
+    public void Solve_Example1_ReturnsTrue()
     {
-        // TODO: 補上測試案例
-        // var result = _solver.Solve(...);
-        // Assert.NotNull(result);
+        Assert.True(_solver.Solve("()"));
     }
 
     [Fact]
-    public void Solve_EmptyInput_HandlesGracefully()
+    public void Solve_Example2_ReturnsTrue()
     {
-        // TODO: 補上邊界測試
+        Assert.True(_solver.Solve("(*)"));
     }
 
     [Fact]
-    public void Solve_LargeInput_DoesNotThrow()
+    public void Solve_Example3_ReturnsTrue()
     {
-        // TODO: 補上壓力測試
+        Assert.True(_solver.Solve("(*))"));
+    }
+
+    [Fact]
+    public void Solve_Empty_ReturnsTrue()
+    {
+        Assert.True(_solver.Solve(""));
+    }
+
+    [Fact]
+    public void Solve_OnlyStar_ReturnsTrue()
+    {
+        Assert.True(_solver.Solve("***"));
+    }
+
+    [Fact]
+    public void Solve_Unmatched_ReturnsFalse()
+    {
+        Assert.False(_solver.Solve(")("));
     }
 }

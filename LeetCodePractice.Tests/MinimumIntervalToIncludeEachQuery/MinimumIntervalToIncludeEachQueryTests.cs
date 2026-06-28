@@ -8,22 +8,31 @@ public class MinimumIntervalToIncludeEachQueryTests
     private readonly MinimumIntervalToIncludeEachQuery _solver = new();
 
     [Fact]
-    public void Solve_Example1_ReturnsExpectedResult()
+    public void Solve_Example1_ReturnsCorrect()
     {
-        // TODO: 補上測試案例
-        // var result = _solver.Solve(...);
-        // Assert.NotNull(result);
+        int[][] intervals = [[1, 4], [2, 4], [3, 6], [4, 4]];
+        int[] queries = [2, 3, 4, 5];
+        Assert.Equal(new int[] { 3, 3, 1, 4 }, _solver.Solve(intervals, queries));
     }
 
     [Fact]
-    public void Solve_EmptyInput_HandlesGracefully()
+    public void Solve_Example2_ReturnsCorrect()
     {
-        // TODO: 補上邊界測試
+        int[][] intervals = [[2, 3], [2, 5], [1, 8], [20, 25]];
+        int[] queries = [2, 19, 5, 22];
+        Assert.Equal(new int[] { 2, -1, 4, 6 }, _solver.Solve(intervals, queries));
     }
 
     [Fact]
-    public void Solve_LargeInput_DoesNotThrow()
+    public void Solve_NoInterval_ReturnsMinus1()
     {
-        // TODO: 補上壓力測試
+        int[][] intervals = [[1, 2]];
+        Assert.Equal(new int[] { -1 }, _solver.Solve(intervals, [5]));
+    }
+
+    [Fact]
+    public void Solve_EmptyIntervals_ReturnsMinus1()
+    {
+        Assert.Equal(new int[] { -1 }, _solver.Solve([], [1]));
     }
 }
