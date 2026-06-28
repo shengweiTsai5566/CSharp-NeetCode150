@@ -37,12 +37,53 @@ namespace LeetCodePractice.Problems;
 /// 	  - `-106 <= xi, yi <= 106`
 /// 
 /// 	  - All pairs `(xi, yi)` are distinct.
+/// 這題在問點和點間連接要怎麼連, 最小成本是多少, 沒有要回答全部的點要怎麼連
 /// </summary>
 public class MinCostToConnectAllPoints
 {
-    public int Solve(int[][] points)
+
+    public static int Solve(int[][] points)
     {
-        throw new NotImplementedException();
+        int n = points.Length;
+        if (n <= 1) return 0;
+
+        bool[] boolary = new bool[n];
+        boolary[0] = true;
+
+        var pq = new PriorityQueue<(int cost, int point), int>();
+
+        for (int i = 1; i < n; i++)
+        {
+            var cost = Manhattan(points[0], points[i]);
+            pq.Enqueue((cost, i), cost);
+
+        }
+        int totalCost = 0;
+        while (pq.Count > 0)
+        {
+            var (cost, point) = pq.Dequeue();
+            if (boolary[point]) continue;
+            boolary[point] = true;
+            totalCost += cost;
+            for (int i = 0; i < n; i++)
+            {//while裡的迴圈是目前的點, 與所有未跑通的點計算新增到queue中
+                if (!boolary[i])
+                {
+                    int newCost = Manhattan(points[point], points[i]);
+                    pq.Enqueue((newCost, i), newCost);
+                }
+            }
+        }
+
+        return totalCost;
+    }
+
+    public static int Manhattan(int[] start, int[] end)
+    {
+        int cost = Math.Abs(start[0] - end[0]) + Math.Abs(start[1] - end[1]);
+
+
+        return cost;
     }
 }
 

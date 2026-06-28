@@ -25,6 +25,13 @@ namespace LeetCodePractice.Problems;
 /// </summary>
 public class CommandDispatcher : IDisposable
 {
+
+    Queue<string> _commandQueue = new Queue<string>();
+    object _lock = new object();
+
+    bool _isStopping = false;
+    Task _consumerTask;
+
     // TODO: 請實作一個執行緒安全的生產者消費者模式
     //
     // 選項 A：使用 Monitor (lock) + Queue<string> + Wait/Pulse
@@ -34,7 +41,7 @@ public class CommandDispatcher : IDisposable
     public CommandDispatcher()
     {
         // TODO: 啟動背景消費執行緒
-        throw new NotImplementedException();
+        _consumerTask = Task.Run(StartConsumerLoop);
     }
 
     /// <summary>
@@ -43,7 +50,20 @@ public class CommandDispatcher : IDisposable
     public void EnqueueCommand(string cmd)
     {
         // TODO: 執行緒安全地加入佇列，並通知消費執行緒
-        throw new NotImplementedException();
+        try
+        {
+            lock (_lock)
+            {
+                _commandQueue.Enqueue(cmd);
+                Monitor.Pulse(_lock); // 通知消費執行緒有新命令
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error in EnqueueCommand: {ex.Message}");
+
+        }
+
     }
 
     /// <summary>
@@ -53,12 +73,36 @@ public class CommandDispatcher : IDisposable
     {
         // TODO: 從佇列取出命令並「發送」（此處用 Console.WriteLine 模擬）
         // 當佇列為空時，應高效等待（Wait / BlockingCollection.Take / Channel.Reader.WaitToReadAsync）
-        throw new NotImplementedException();
+        while (_isStopping == false)
+        {
+            string cmd = null;
+            lock (_lock)
+            {
+                while (_commandQueue.Count == 0 && !_isStopping)
+                {
+                    Monitor.Wait(_lock); // 等待新命令  
+
+                }
+                if (_commandQueue.Count == 0 &&_isStopping) break;
+                cmd = _commandQueue.Dequeue();
+
+
+            }
+            if (cmd != null)
+            {
+                Console.WriteLine($"Sending command: {cmd}");
+            }
+        }
     }
 
     public void Dispose()
     {
         // TODO: 通知消費執行緒結束，等待完成
-        throw new NotImplementedException();
+        lock (_lock)
+        {
+            _isStopping = true;
+            Monitor.Pulse(_lock);
+        }
+        _consumerTask.Wait();
     }
 }

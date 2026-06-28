@@ -61,11 +61,125 @@ namespace LeetCodePractice.Problems;
 /// </summary>
 public class CheapestFlightsWithinKStops
 {
+
+    Queue<FlightPlan> flightPlans = new();
+
+    //src 起點城市
+    //dst 目的城市
+    //k   中轉次數
+    //flisghts 航班資訊[起點, 終點, 價格]
+    //n 城市總數
+
+    //回傳: 在符合轉站的次數下, 回傳最便宜的方案
     public int Solve(int n, int[][] flights, int src, int dst, int k)
     {
-        throw new NotImplementedException();
+        Dictionary<int, List<(int to, int price)>> graph = new();
+        List<(int cost, List<int> path)> results = new();
+
+        for (int i = 0; i < flights.Length; i++)
+        {
+            int startPoint = flights[i][0];
+            int endPoint = flights[i][1];
+            int cost = flights[i][2];
+
+
+            graph.TryAdd(startPoint, new List<(int to, int price)>());
+            graph[startPoint].Add((endPoint, cost));
+
+
+        }
+        //var a = graph[0];
+
+        flightPlans.Enqueue(new FlightPlan(src, 0, 0, new List<int> { src }));
+
+
+        while (flightPlans.Count > 0)
+        {
+            FlightPlan fp = flightPlans.Dequeue();
+
+            if (fp.city == dst && fp.stops <= k)
+                results.Add((fp.cost, fp.path));
+            if (fp.stops > k) continue;
+
+            if (!graph.ContainsKey(fp.city)) continue;
+
+            foreach (var nf in graph[fp.city])
+            {
+                var newPath = new List<int>(fp.path);
+                newPath.Add(nf.to);
+
+                if (nf.to != dst && fp.stops < k)
+                {
+                    flightPlans.Enqueue(new FlightPlan(nf.to, fp.stops + 1, fp.cost + nf.price, newPath));
+                }
+                else if (nf.to == dst)
+                {
+                    flightPlans.Enqueue(new FlightPlan(nf.to, fp.stops, fp.cost + nf.price, newPath));
+                }
+            }
+
+        }
+
+        if (results.Count > 0)
+        {
+            var cheapest = results.OrderBy(r => r.cost).First();
+            return cheapest.cost;
+        }
+
+        return -1;
+
+    }
+
+
+
+
+    class FlightPlan
+    {
+        public int city { get; set; }
+        public int stops { get; set; }
+        public int cost { get; set; }
+        public List<int> path { get; set; }
+
+        public FlightPlan(int city, int stops, int cost, List<int> path)
+        {
+            this.city = city;
+            this.stops = stops;
+            this.cost = cost;
+            this.path = path;
+        }
+    }
+
+
+    public int Bellman_Ford_Solve(int n, int[][] flights, int src, int dst, int k)
+    {
+        int[] prices = new int[n];
+        Array.Fill(prices, int.MaxValue);
+        prices[src] = 0;
+
+        for (int i = 0; i <= k; i++)
+        {
+            int[] temp = (int[])prices.Clone();
+
+            foreach (var flight in flights)
+            {
+                int from = flight[0], to = flight[1], price = flight[2];
+
+                if (prices[from] != int.MaxValue)
+                {
+                    int newCost = prices[from] + price;
+                    if (newCost < temp[to])
+                        temp[to] = newCost;
+                }
+            }
+
+            prices = temp;
+        }
+
+        return prices[dst] == int.MaxValue ? -1 : prices[dst];
     }
 }
+
+
 
 
 
