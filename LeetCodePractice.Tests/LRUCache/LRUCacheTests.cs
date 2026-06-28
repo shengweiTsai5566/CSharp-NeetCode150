@@ -8,7 +8,7 @@ public class LRUCacheTests
     [Fact]
     public void LRUCache_Example1_Works()
     {
-        var cache = new LRUCache();
+        var cache = new LRUCache(2);
         cache.Put(1, 1);
         cache.Put(2, 2);
         Assert.Equal(1, cache.Get(1));
@@ -23,7 +23,7 @@ public class LRUCacheTests
     [Fact]
     public void LRUCache_Capacity1_Works()
     {
-        var cache = new LRUCache();
+        var cache = new LRUCache(1);
         cache.Put(1, 10);
         Assert.Equal(10, cache.Get(1));
         cache.Put(2, 20); // evicts 1
@@ -34,7 +34,7 @@ public class LRUCacheTests
     [Fact]
     public void LRUCache_UpdateExisting_UpdatesValue()
     {
-        var cache = new LRUCache();
+        var cache = new LRUCache(2);
         cache.Put(1, 10);
         cache.Put(1, 20);
         Assert.Equal(20, cache.Get(1));
@@ -43,7 +43,7 @@ public class LRUCacheTests
     [Fact]
     public void LRUCache_GetMakesItRecent_NoEviction()
     {
-        var cache = new LRUCache();
+        var cache = new LRUCache(2);
         cache.Put(1, 1);
         cache.Put(2, 2);
         cache.Get(1);       // makes 1 most recent
